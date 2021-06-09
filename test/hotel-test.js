@@ -47,7 +47,7 @@ describe('Hotel Class', () => {
         booking3 = sampleBookingData[2];
       }
     ]};
-    hotel = new Hotel(hotelRooms, hotelBookins, hotelCustomers);
+    hotel = new Hotel(hotelRooms, hotelBookings, hotelCustomers);
   })
 
 
