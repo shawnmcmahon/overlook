@@ -65,6 +65,12 @@ describe('Customer Class', () => {
       expect(customer3.id).to.eql(3);
     });
 
+    it('should have a name property', () => {
+      expect(customer1.name).to.eql("Leatha Ullrich");
+      expect(customer2.name).to.eql("Rocio Schuster");
+      expect(customer3.name).to.eql("Kelvin Schiller");
+    })
+
   })
 
   describe('Customer Methods', () => {
