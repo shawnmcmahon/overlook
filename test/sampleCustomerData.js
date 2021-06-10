@@ -1,4 +1,4 @@
-const sampleCustomerData = [
+const sampleCustomerData = {'customers': [
   {
     id: 1,
     name: "Leatha Ullrich"
@@ -11,7 +11,7 @@ const sampleCustomerData = [
     id: 3,
     name: "Kelvin Schiller"
   },
-];
+]};
 
 
 export default sampleCustomerData;

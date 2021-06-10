@@ -8,51 +8,50 @@ import sampleBookingData from './sampleHotelData'
 
 describe('Customer Class', () => {
   //Declare variable names here
-  let customer1, customer2, customer3;
+  let customer1, customer2, customer3, hotelCustomers;
   let room1, room2, room3, hotelRooms;
   let booking1, booking2, booking3, hotelBookings;
   let hotel;
   beforeEach(() => {
-    hotelCustomers = {'customers': [
-      {
-        customer1 = new Customer(sampleCustomerData[0]);
-      },
-      {
-        customer2 = new Customer(sampleCustomerData[1])
-      },
-      {
-        customer3 = new Customer(sampleCustomerData[2]);
-      }
-    ]};
-    hotelRooms = {'rooms': [
-      {
-        room1 = sampleRoomData[0]
-      },
-      {
-        room2 = sampleRoomData[1],
-      }
-      {
-        room3 = sampleRoomData[2],
-      }
-    ]};
-    hotelBookings = {'bookings': [
-      {
-        booking1 = sampleBookingData[0];
+      customer1 = new Customer(sampleCustomerData.customers[0]);
+      customer2 = new Customer(sampleCustomerData.customers[1]);
+      customer3 = new Customer(sampleCustomerData.customers[2]);
+      hotelCustomers = sampleCustomerData;
+      //May need to instanitate hotelCustomers with classes
+      //of customers rather than just plain customer data
+      // hotelCustomers = {'customers': [
+      //   {
+      //     customer1 = new Customer(sampleCustomerData[0]);
+      //   },
+      //   {
+      //     customer2 = new Customer(sampleCustomerData[1]);
+      //   },
+      //   {
+      //     customer3 = new Customer(sampleCustomerData[2]);
+      //   },
+      // ]};
 
-      },
-      {
-        booking2 = sampleBookingData[1];
-      },
-      {
-        booking3 = sampleBookingData[2];
-      }
-    ]};
-    hotel = new Hotel(hotelRooms, hotelBookins, hotelCustomers);
+      // May be going 1 step too deep in this sample object data set
+      // May effect data once connected to api
+      // May need to figure out how to remove redundant property below
+      room1 = sampleRoomData.sampleRoomData.rooms[0];
+      room2 = sampleRoomData.sampleRoomData.rooms[1];
+      room3 = sampleRoomData.sampleRoomData.rooms[2];
+      hotelRooms = sampleRoomData;
+
+      booking1 = sampleBookingData.sampleBookingData.bookings[0];
+      booking2 = sampleBookingData.sampleBookingData.bookings[1];
+      booking3 = sampleBookingData.sampleBookingData.bookings[2];
+      hotelBookings = sampleBookingData;
+
+      hotel = new Hotel(hotelRooms, hotelBookings, sampleCustomerData);
   })
 
 
   describe('Customer Properties', () => {
-
+    it('should be a function', function() {
+      expect(Customer).to.be.a('function');
+    });
 
   })
 

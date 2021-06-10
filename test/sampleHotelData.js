@@ -1,4 +1,4 @@
-const sampleRoomData = [
+const sampleRoomData = {'rooms' : [
   {
     number: 1,
     roomType: "residential suite",
@@ -23,11 +23,9 @@ const sampleRoomData = [
     numBeds: 1,
     costPerNight: 491.14
   }
+]};
 
-
-];
-
-const sampleBookingData = [
+const sampleBookingData = {'bookings': [
   {
     id: "5fwrgu4i7k55hl6sz",
     userID: 9,
@@ -50,7 +48,7 @@ const sampleBookingData = [
     roomNumber: 12,
     roomServiceCharges: [ ]
   },
-];
+]};
 
 
 export default {sampleRoomData, sampleBookingData}
