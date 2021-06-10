@@ -8,8 +8,7 @@ import sampleBookingData from './sampleHotelData'
 
 describe('Hotel Class', () => {
   //Declare variable names here
-  let customer1, customer2, customer3;
-  let hotelCustomers;
+  let customer1, customer2, customer3, hotelCustomers;
   let room1, room2, room3, hotelRooms;
   let booking1, booking2, booking3, hotelBookings;
   let hotel;
