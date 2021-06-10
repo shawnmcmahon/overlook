@@ -3,8 +3,8 @@ const expect = chai.expect;
 import Hotel from '../src/hotel'
 import Customer from '../src/customer'
 import sampleCustomerData from './sampleCustomerData'
-import sampleRoomData from './sampleHotelData'
-import sampleBookingData from './sampleHotelData'
+import sampleRoomData from './sampleRoomData'
+import sampleBookingData from './sampleBookingData'
 
 describe('Hotel Class', () => {
   //Declare variable names here

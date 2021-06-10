@@ -3,8 +3,8 @@ const expect = chai.expect;
 import Hotel from '../src/hotel'
 import Customer from '../src/customer'
 import sampleCustomerData from './sampleCustomerData'
-import sampleRoomData from './sampleHotelData'
-import sampleBookingData from './sampleHotelData'
+import sampleRoomData from './sampleRoomData'
+import sampleBookingData from './sampleBookingData'
 
 describe('Customer Class', () => {
   //Declare variable names here
@@ -30,18 +30,14 @@ describe('Customer Class', () => {
       //     customer3 = new Customer(sampleCustomerData[2]);
       //   },
       // ]};
-
-      // May be going 1 step too deep in this sample object data set
-      // May effect data once connected to api
-      // May need to figure out how to remove redundant property below
-      room1 = sampleRoomData.sampleRoomData.rooms[0];
-      room2 = sampleRoomData.sampleRoomData.rooms[1];
-      room3 = sampleRoomData.sampleRoomData.rooms[2];
+      room1 = sampleRoomData.rooms[0];
+      room2 = sampleRoomData.rooms[1];
+      room3 = sampleRoomData.rooms[2];
       hotelRooms = sampleRoomData;
 
-      booking1 = sampleBookingData.sampleBookingData.bookings[0];
-      booking2 = sampleBookingData.sampleBookingData.bookings[1];
-      booking3 = sampleBookingData.sampleBookingData.bookings[2];
+      booking1 = sampleBookingData.bookings[0];
+      booking2 = sampleBookingData.bookings[1];
+      booking3 = sampleBookingData.bookings[2];
       hotelBookings = sampleBookingData;
 
       hotel = new Hotel(hotelRooms, hotelBookings, sampleCustomerData);
@@ -69,12 +65,37 @@ describe('Customer Class', () => {
       expect(customer1.name).to.eql("Leatha Ullrich");
       expect(customer2.name).to.eql("Rocio Schuster");
       expect(customer3.name).to.eql("Kelvin Schiller");
-    })
+    });
+
+    it('should have a booking history property that is an empty array by default', () => {
+      expect(customer1.bookingHistory).to.eql([]);
+      expect(customer2.bookingHistory).to.eql([]);
+      expect(customer3.bookingHistory).to.eql([]);
+    });
+
+    it('should have a room history property that is an empty array by default', () => {
+      expect(customer1.roomHistory).to.eql([]);
+      expect(customer2.roomHistory).to.eql([]);
+      expect(customer3.roomHistory).to.eql([]);
+    });
+
+    it('should have an expense history property that is 0 by default', () => {
+      expect(customer1.expenseHistory).to.eql(0);
+      expect(customer2.expenseHistory).to.eql(0);
+      expect(customer3.expenseHistory).to.eql(0);
+    });
 
   })
 
   describe('Customer Methods', () => {
-
+    it.only('should have a method updates the bookingHistory property with the user\'s booking history', () => {
+      const customer1BookingHistory = customer1.findBookingHistory(sampleBookingData);
+      const customer2BookingHistory = customer2.findBookingHistory(sampleBookingData);
+      const customer3BookingHistory = customer3.findBookingHistory(sampleBookingData);
+      expect(customer1.bookingHistory).to.eql([booking1])
+      expect(customer2.bookingHistory).to.eql([booking2])
+      expect(customer3.bookingHistory).to.eql([booking3])
+    });
 
   })
 
