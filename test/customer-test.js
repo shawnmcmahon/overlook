@@ -53,6 +53,18 @@ describe('Customer Class', () => {
       expect(Customer).to.be.a('function');
     });
 
+    it('should be an instance of customer', () => {
+      expect(customer1).to.be.an.instanceof(Customer);
+      expect(customer2).to.be.an.instanceof(Customer);
+      expect(customer3).to.be.an.instanceof(Customer);
+    });
+
+    it('should have an ID property', () => {
+      expect(customer1.id).to.eql(1);
+      expect(customer2.id).to.eql(2);
+      expect(customer3.id).to.eql(3);
+    });
+
   })
 
   describe('Customer Methods', () => {
