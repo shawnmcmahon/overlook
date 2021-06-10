@@ -45,7 +45,7 @@ describe('Customer Class', () => {
 
 
   describe('Customer Properties', () => {
-    it('should be a function', function() {
+    it('should be a function', () => {
       expect(Customer).to.be.a('function');
     });
 
@@ -87,8 +87,10 @@ describe('Customer Class', () => {
 
   })
 
+
+
   describe('Customer Methods', () => {
-    it.only('should have a method updates the bookingHistory property with the user\'s booking history', () => {
+    it('should have a method that updates the bookingHistory property with the user\'s booking history', () => {
       const customer1BookingHistory = customer1.findBookingHistory(sampleBookingData);
       const customer2BookingHistory = customer2.findBookingHistory(sampleBookingData);
       const customer3BookingHistory = customer3.findBookingHistory(sampleBookingData);
@@ -96,6 +98,45 @@ describe('Customer Class', () => {
       expect(customer2.bookingHistory).to.eql([booking2])
       expect(customer3.bookingHistory).to.eql([booking3])
     });
+
+    it('should have a method that updates the roomHistory property with the user\'s room history with the date attached', () =>  {
+      const customer1RoomHistory = customer1.findRoomHistoryWithDate(sampleBookingData, sampleRoomData);
+      const customer2RoomHistory = customer2.findRoomHistoryWithDate(sampleBookingData, sampleRoomData);
+      const customer3RoomHistory = customer3.findRoomHistoryWithDate(sampleBookingData, sampleRoomData);
+      expect(customer1.roomHistory).to.eql([[
+        '2020/04/22',
+        {
+          number: 1,
+          roomType: 'residential suite',
+          bidet: true,
+          bedSize: 'queen',
+          numBeds: 1,
+          costPerNight: 358.4
+        }
+      ]])
+      expect(customer2.roomHistory).to.eql([[
+        '2020/01/24',
+        {
+          number: 2,
+          roomType: 'suite',
+          bidet: false,
+          bedSize: 'full',
+          numBeds: 2,
+          costPerNight: 477.38
+        }
+      ]])
+      expect(customer3.roomHistory).to.eql([[
+        '2020/01/10',
+        {
+          number: 3,
+          roomType: 'single room',
+          bidet: false,
+          bedSize: 'king',
+          numBeds: 1,
+          costPerNight: 491.14
+        }
+      ]])
+    })
 
   })
 
