@@ -10,7 +10,7 @@ describe('Customer Class', () => {
   //Declare variable names here
   let customer1, customer2, customer3, hotelCustomers;
   let room1, room2, room3, hotelRooms;
-  let booking1, booking2, booking3, hotelBookings;
+  let booking1, booking2, booking3, booking4, hotelBookings;
   let hotel;
   beforeEach(() => {
     hotelCustomers = sampleCustomerData;
@@ -39,6 +39,7 @@ describe('Customer Class', () => {
     booking1 = sampleBookingData.bookings[0];
     booking2 = sampleBookingData.bookings[1];
     booking3 = sampleBookingData.bookings[2];
+    booking4 = sampleBookingData.bookings[3];
 
     hotel = new Hotel(hotelRooms, hotelBookings, hotelCustomers);
   })
@@ -88,16 +89,16 @@ describe('Customer Class', () => {
 
 
   describe('Customer Methods', () => {
-    it('should have a method that updates the bookingHistory property with the user\'s booking history', () => {
+    it.only('should have a method that updates the bookingHistory property with the customer\'s booking history', () => {
       const customer1BookingHistory = customer1.findBookingHistory(sampleBookingData);
       const customer2BookingHistory = customer2.findBookingHistory(sampleBookingData);
       const customer3BookingHistory = customer3.findBookingHistory(sampleBookingData);
-      expect(customer1.bookingHistory).to.eql([booking1])
+      expect(customer1.bookingHistory).to.eql([booking1, booking4])
       expect(customer2.bookingHistory).to.eql([booking2])
       expect(customer3.bookingHistory).to.eql([booking3])
     });
 
-    it('should have a method that updates the roomHistory property with the user\'s room history with the date attached', () =>  {
+    it('should have a method that updates the roomHistory property with the customer\'s room history with the date attached', () =>  {
       const customer1RoomHistory = customer1.findRoomHistoryWithDate(sampleBookingData, sampleRoomData);
       const customer2RoomHistory = customer2.findRoomHistoryWithDate(sampleBookingData, sampleRoomData);
       const customer3RoomHistory = customer3.findRoomHistoryWithDate(sampleBookingData, sampleRoomData);
@@ -134,7 +135,13 @@ describe('Customer Class', () => {
           costPerNight: 491.14
         }
       ]])
-    })
+    });
+
+    it('should have a method that updates the expenseTotal property with the customer\'s', () => {
+      const customer1ExpenseTotal = customer1.findExpenseTotal(sampleRoomData);
+      expect(customer1.expenseTotal).to.eql([])
+
+    });
 
   })
 
