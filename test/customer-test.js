@@ -146,6 +146,8 @@ describe('Customer Class', () => {
       expect(customer3.expenseTotal).to.equal(491.14);
     });
 
+  
+
   })
 
 
