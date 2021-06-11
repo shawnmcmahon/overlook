@@ -13,48 +13,47 @@ describe('Customer Class', () => {
   let booking1, booking2, booking3, hotelBookings;
   let hotel;
   beforeEach(() => {
-      customer1 = new Customer(sampleCustomerData.customers[0]);
-      customer2 = new Customer(sampleCustomerData.customers[1]);
-      customer3 = new Customer(sampleCustomerData.customers[2]);
-      hotelCustomers = sampleCustomerData;
-      //May need to instanitate hotelCustomers with classes
-      //of customers rather than just plain customer data
-      // hotelCustomers = {'customers': [
-      //   {
-      //     customer1 = new Customer(sampleCustomerData[0]);
-      //   },
-      //   {
-      //     customer2 = new Customer(sampleCustomerData[1]);
-      //   },
-      //   {
-      //     customer3 = new Customer(sampleCustomerData[2]);
-      //   },
-      // ]};
-      room1 = sampleRoomData.rooms[0];
-      room2 = sampleRoomData.rooms[1];
-      room3 = sampleRoomData.rooms[2];
-      hotelRooms = sampleRoomData;
+    hotelCustomers = sampleCustomerData;
+    customer1 = new Customer(sampleCustomerData.customers[0]);
+    customer2 = new Customer(sampleCustomerData.customers[1]);
+    customer3 = new Customer(sampleCustomerData.customers[2]);
+    //May need to instanitate hotelCustomers with classes
+    //of customers rather than just plain customer data
+    // hotelCustomers = {'customers': [
+    //   {
+    //     customer1 = new Customer(sampleCustomerData[0]);
+    //   },
+    //   {
+    //     customer2 = new Customer(sampleCustomerData[1]);
+    //   },
+    //   {
+    //     customer3 = new Customer(sampleCustomerData[2]);
+    //   },
+    // ]};
+    hotelRooms = sampleRoomData;
+    room1 = sampleRoomData.rooms[0];
+    room2 = sampleRoomData.rooms[1];
+    room3 = sampleRoomData.rooms[2];
 
-      booking1 = sampleBookingData.bookings[0];
-      booking2 = sampleBookingData.bookings[1];
-      booking3 = sampleBookingData.bookings[2];
-      hotelBookings = sampleBookingData;
+    hotelBookings = sampleBookingData;
+    booking1 = sampleBookingData.bookings[0];
+    booking2 = sampleBookingData.bookings[1];
+    booking3 = sampleBookingData.bookings[2];
 
-      hotel = new Hotel(hotelRooms, hotelBookings, sampleCustomerData);
+    hotel = new Hotel(hotelRooms, hotelBookings, hotelCustomers);
   })
 
+  it('should be a function', () => {
+    expect(Customer).to.be.a('function');
+  });
+
+  it('should be an instance of Customer', () => {
+    expect(customer1).to.be.an.instanceof(Customer);
+    expect(customer2).to.be.an.instanceof(Customer);
+    expect(customer3).to.be.an.instanceof(Customer);
+  });
 
   describe('Customer Properties', () => {
-    it('should be a function', () => {
-      expect(Customer).to.be.a('function');
-    });
-
-    it('should be an instance of customer', () => {
-      expect(customer1).to.be.an.instanceof(Customer);
-      expect(customer2).to.be.an.instanceof(Customer);
-      expect(customer3).to.be.an.instanceof(Customer);
-    });
-
     it('should have an ID property', () => {
       expect(customer1.id).to.eql(1);
       expect(customer2.id).to.eql(2);
@@ -80,13 +79,12 @@ describe('Customer Class', () => {
     });
 
     it('should have an expense history property that is 0 by default', () => {
-      expect(customer1.expenseHistory).to.eql(0);
-      expect(customer2.expenseHistory).to.eql(0);
-      expect(customer3.expenseHistory).to.eql(0);
+      expect(customer1.expenseTotal).to.eql(0);
+      expect(customer2.expenseTotal).to.eql(0);
+      expect(customer3.expenseTotal).to.eql(0);
     });
 
   })
-
 
 
   describe('Customer Methods', () => {

@@ -13,10 +13,10 @@ describe('Hotel Class', () => {
   let booking1, booking2, booking3, hotelBookings;
   let hotel;
   beforeEach(() => {
+    hotelCustomers = sampleCustomerData;
     customer1 = new Customer(sampleCustomerData.customers[0]);
     customer2 = new Customer(sampleCustomerData.customers[1]);
     customer3 = new Customer(sampleCustomerData.customers[2]);
-    hotelCustomers = sampleCustomerData;
     //May need to instanitate hotelCustomers with classes
     //of customers rather than just plain customer data
     // hotelCustomers = {'customers': [
@@ -34,16 +34,15 @@ describe('Hotel Class', () => {
     // May be going 1 step too deep in this sample object data set
     // May effect data once connected to api
     // May need to figure out how to remove redundant property below
+    hotelRooms = sampleRoomData;
     room1 = sampleRoomData.sampleRoomData.rooms[0];
     room2 = sampleRoomData.sampleRoomData.rooms[1];
     room3 = sampleRoomData.sampleRoomData.rooms[2];
-    hotelRooms = sampleRoomData;
 
-    console.log('booking 0', sampleBookingData.sampleBookingData.bookings[0])
+    hotelBookings = sampleBookingData;
     booking1 = sampleBookingData.sampleBookingData.bookings[0];
     booking2 = sampleBookingData.sampleBookingData.bookings[1];
     booking3 = sampleBookingData.sampleBookingData.bookings[2];
-    hotelBookings = sampleBookingData;
 
     hotel = new Hotel(hotelRooms, hotelBookings, sampleCustomerData);
   })
