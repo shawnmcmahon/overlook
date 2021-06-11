@@ -21,6 +21,13 @@ const sampleBookingData = {'bookings': [
     roomNumber: 3,
     roomServiceCharges: [ ]
   },
+  // {
+  //   id: "5fwrgu4i7k55hl6t7",
+  //   userID: 1,
+  //   date: "2020/01/11",
+  //   roomNumber: 4,
+  //   roomServiceCharges: [ ]
+  // },
 ]};
 
 export default sampleBookingData;

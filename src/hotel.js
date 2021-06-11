@@ -3,6 +3,11 @@ class Hotel {
     this.rooms = rooms;
     this.bookings = bookings;
     this.customers = customers;
+    this.searchDate = '';
+    this.availableRooms = [];
+    this.roomSearchResults = [];
+    this.roomSearchResultsByDateRequested = [];
+    this.requestedRoom = [];
 
   }
 }
