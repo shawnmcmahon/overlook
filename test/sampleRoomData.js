@@ -39,14 +39,14 @@ const sampleRoomData = {'rooms' : [
     numBeds: 2,
     costPerNight: 477.38
   },
-  {
-    number: 4,
-    roomType: "single room",
-    bidet: false,
-    bedSize: "queen",
-    numBeds: 1,
-    costPerNight: 5000
-  }
+  // {
+  //   number: 4,
+  //   roomType: "single room",
+  //   bidet: false,
+  //   bedSize: "queen",
+  //   numBeds: 1,
+  //   costPerNight: 500
+  // }
 ]};
 
 

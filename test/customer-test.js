@@ -89,11 +89,11 @@ describe('Customer Class', () => {
 
 
   describe('Customer Methods', () => {
-    it.only('should have a method that updates the bookingHistory property with the customer\'s booking history', () => {
+    it('should have a method that updates the bookingHistory property with the customer\'s booking history', () => {
       const customer1BookingHistory = customer1.findBookingHistory(sampleBookingData);
       const customer2BookingHistory = customer2.findBookingHistory(sampleBookingData);
       const customer3BookingHistory = customer3.findBookingHistory(sampleBookingData);
-      expect(customer1.bookingHistory).to.eql([booking1, booking4])
+      expect(customer1.bookingHistory).to.eql([booking1])
       expect(customer2.bookingHistory).to.eql([booking2])
       expect(customer3.bookingHistory).to.eql([booking3])
     });
@@ -138,9 +138,12 @@ describe('Customer Class', () => {
     });
 
     it('should have a method that updates the expenseTotal property with the customer\'s', () => {
-      const customer1ExpenseTotal = customer1.findExpenseTotal(sampleRoomData);
-      expect(customer1.expenseTotal).to.eql([])
-
+      const customer1ExpenseTotal = customer1.findExpenseTotal(sampleBookingData, sampleRoomData);
+      const customer2ExpenseTotal = customer2.findExpenseTotal(sampleBookingData, sampleRoomData);
+      const customer3ExpenseTotal = customer3.findExpenseTotal(sampleBookingData, sampleRoomData);
+      expect(customer1.expenseTotal).to.equal(716.80);
+      expect(customer2.expenseTotal).to.equal(954.76);
+      expect(customer3.expenseTotal).to.equal(491.14);
     });
 
   })
