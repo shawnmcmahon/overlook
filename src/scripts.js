@@ -20,8 +20,6 @@ import apiCalls from './apiCalls';
 let availableRoomsBackground = document.getElementById('availableRoomsBackground');
 let reservationHistoryBackground = document.getElementById('reservationHistoryBackground');
 
-
-
 //Form selectors
 let bookDate = document.getElementById('bookDate');
 let bookRoomType = document.getElementById('bookRoomType');
@@ -39,3 +37,38 @@ let roomCost = document.getElementById('roomCost');
 let roomType = document.getElementById('roomType');
 let roomNumberOfBeds = document.getElementById('roomNumberOfBeds');
 let roomBidet = document.getElementById('roomBidet');
+
+// Variables
+let bookingData, roomData, customerData, customer, hotel;
+// Event Listeners
+window.onload = loadPage();
+
+
+function loadPage() {
+   apiCalls.retrieveData()
+    .then((promise) => {
+      console.log('promise from scripts:', promise)
+      customerData = promise[0].customers;
+      //console.log(customerData[0])
+      roomData = promise[1].rooms;
+      //console.log(roomData)
+      bookingData = promise[2].bookings
+      // console.log(bookingData)
+      hotel = new Hotel(roomData, bookingData, customerData)
+      // console.log(hotel)
+      customer = new Customer(customerData[0])
+      console.log(customer)
+    })
+    //Scripts function that will run customer methods to find findBookingHistory
+    //and expense history
+
+    //DOM Updates function that updates the user's info to the DOM
+}
+
+function retrieveCustomerData(customerData, bookingData, roomData) {
+  customer.findBookingHistory(bookingData)
+  customer.findExpenseTotal(bookingData, roomData)
+  //DOM Updates function that updates the user's info to the DOM
+
+
+}

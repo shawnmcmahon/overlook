@@ -17,7 +17,7 @@ const fetchBookingData = () => {
 }
 
 const checkForError = (response) => {
-  console.log(response)
+  // console.log(response)
   if (!response.ok) {
     throw new Error('Something went wrong, please try again,')
   } else {
@@ -37,6 +37,7 @@ function addNewBooking(bookingData, roomData, booking) {
 }
 
 const retrieveData = () => {
+  console.log(Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()]))
   return Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()])
 }
 
