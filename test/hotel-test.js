@@ -111,6 +111,22 @@ beforeEach(() => {
       ]]);
     });
 
+    it.only('should have a method that requests a room to be booked', () => {
+      hotel.findAvailableRooms('2020/04/22');
+      hotel.requestRoom(2);
+      expect(hotel.requestedRoom).to.eql([
+        '2020/04/22',
+        {
+          number: 2,
+          roomType: 'suite',
+          bidet: false,
+          bedSize: 'full',
+          numBeds: 2,
+          costPerNight: 477.38
+        }
+      ])
+    });
+
   })
 
 
