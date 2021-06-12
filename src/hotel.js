@@ -10,6 +10,22 @@ class Hotel {
     this.requestedRoom = [];
 
   }
+
+  //Is this returning the rooms it should be?
+  findAvailableRooms(date) {
+    this.searchDate = date;
+    const availableRooms = this.bookings.bookings.filter(currentBooking => currentBooking.date === date)
+    const roomNumbers = availableRooms.map(currentRoom => currentRoom.roomNumber);
+    let foundRooms = this.rooms.rooms.reduce((availableRooms, room) => {
+      if (!roomNumbers.includes(room.number) && !availableRooms.includes(room)) {
+        availableRooms.push([date, room])
+      }
+      return availableRooms
+    }, [])
+
+    this.availableRooms = foundRooms;
+    return this.availableRooms
+  }
 }
 
 export default Hotel
