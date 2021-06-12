@@ -1,16 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- <link rel='stylesheet' href='./src/css/base.scss'> -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webpack Starter Kit</title>
 </head>
 <body>
-  <img src="./images/happyface.png">
-  <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-  <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
-  <script src="bundle.js"></script>
+  <body>
+    <main>
+      <header>
+        <nav>
+          <h1 class="reservation-history-label">OVERLOOK HOTEL</button>
+        </nav>
+      </header>
+      <section class="room-search-form">
+        <div class="input date">
+         <label for="bookDate">Date: </label>
+         <input type="date" id="bookDate" name="Book Date"
+         value="2020-07-04" min="2020-01-01" max="2022-01-01"/>
+       </div>
+       <div class="room-features">
+          <div class="input room-type">
+            <label for="roomType">Room Type: </label>
+            <select id="roomType" name="roomType">
+              <option value="single room">single room</option>
+              <option value="junior suite">junior suite</option>
+              <option value="suite">suite</option>
+              <option value="residential suite">residential suite</option>
+            </select>
+          </div>
+          <div class="input bed-num">
+            <label for="numBeds">Number of Beds: </label>
+            <input type="number" class="num-beds" id="numBeds" name="beds" min="1" max="2" value="1"/>
+          </div>
+          <!-- <button type="button" class="filter-button" id="filterRooms">Filter</button> -->
+          <fieldset>
+            <legend for="Bidet">Bidet?</legend>
+            <div class="input">
+              <input type="radio" id="yes" name="Bidet" value="true" checked />
+              <label for="yes">Yes</label>
+            </div>
+            <div class="input">
+              <input type="radio" id="no" name="Bidet" value=""/>
+              <label for="no">No</label>
+            </div>
+            <div class="input">
+              <input type="radio" id="doesntMatter" name="Bidet"
+              value="maybe"/>
+              <label for="doesntMatter">No Preference</label>
+            </div>
+          </fieldset>
+              <button type="button" class="" id="filterRooms">Filter</button>
+              <button type="button" class="" id="bookRoom">Book</button>
+        </div>
+      </section>
+      <div class="label-container">
+        <p class="reservation-history-label">Available Rooms</p>
+      </div>
+      <section class="reservation-background">
+        <article class="card" tabindex="0">
+          <section class="card-header">
+              <p class="room-label">Room Number</p>
+              <p class="room-value">01</p>
+          </section>
+            <p class="reservation-date" aria-label="Reservation Date">04/21/2020</p>
+            <p class="reservation-label">Reservation Date</p>
+          <section class="cost-label">
+            <p class="cost-value" aria-label="Cost Per Night">$365 Per Night</p>
+          </section>
+            <p class="detail-label">Room Type</p>
+            <p class="detail-value">King</p>
+            <p class="detail-label">Number of Beds</p>
+            <p class="detail-value">2</p>
+            <p class="detail-label">Bidet</p>
+            <p class="detail-value">Yes</p>
+        </article>
+        <article class="card" tabindex="0">
+          <section class="card-header">
+              <p class="room-label">Room Number</p>
+              <p class="room-value">01</p>
+          </section>
+            <p class="reservation-date" aria-label="Reservation Date">04/21/2020</p>
+            <p class="reservation-label">Reservation Date</p>
+          <section class="cost-label">
+            <p class="cost-value" aria-label="Cost Per Night">$365 Per Night</p>
+          </section>
+            <p class="detail-label">Room Type</p>
+            <p class="detail-value">King</p>
+            <p class="detail-label">Number of Beds</p>
+            <p class="detail-value">2</p>
+            <p class="detail-label">Bidet</p>
+            <p class="detail-value">Yes</p>
+        </article>
+      </section>
+      <div class="label-container">
+        <p class="reservation-history-label">Your Reservation History</p>
+      </div>
+      <section class="reservation-background">
+        <article class="card">
+          <section class="card-header">
+              <p class="room-label">Room Number</p>
+              <p class="room-value">01</p>
+          </section>
+            <p class="reservation-date" aria-label="Reservation Date">04/21/2020</p>
+            <p class="reservation-label">Reservation Date</p>
+          <section class="cost-label">
+            <p class="cost-value" aria-label="Cost Per Night">$365 Per Night</p>
+          </section>
+            <p class="detail-label">Room Type</p>
+            <p class="detail-value">King</p>
+            <p class="detail-label">Number of Beds</p>
+            <p class="detail-value">2</p>
+            <p class="detail-label">Bidet</p>
+            <p class="detail-value">Yes</p>
+            <article class="card" tabindex="0">
+              <section class="card-header">
+                  <p class="room-label">Room Number</p>
+                  <p class="room-value">01</p>
+              </section>
+                <p class="reservation-date" aria-label="Reservation Date">04/21/2020</p>
+                <p class="reservation-label">Reservation Date</p>
+              <section class="cost-label">
+                <p class="cost-value" aria-label="Cost Per Night">$365 Per Night</p>
+              </section>
+                <p class="detail-label">Room Type</p>
+                <p class="detail-value">King</p>
+                <p class="detail-label">Number of Beds</p>
+                <p class="detail-value">2</p>
+                <p class="detail-label">Bidet</p>
+                <p class="detail-value">Yes</p>
+            </article>
+        </article>
+      </section>
 
+  </main>
+  <script src="bundle.js"></script>
 </body>
 </html>

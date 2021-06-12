@@ -2,6 +2,518 @@
 $primary-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
 ;
 
-body {
-  background: $primary-background;
+
+
+html,
+body
+main {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  overflow: scroll;
+  width: 100%;
+}
+
+article {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+header {
+  align-self: center;
+  align-items: center;
+  background-color: #DD6B6B;
+  border: none;
+  display: flex;
+  height: 75px;
+  margin-right: 10px;
+  outline: none;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+
+section {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  outline: none;
+}
+
+.room-search-form {
+  height: 200px;
+  width: 100%;
+  background-color: gray;
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.reservation-date {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.reservation-label {
+  font-size: 10px;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+
+.detail-label,
+.artist-100 {
+  font-size: 12px;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+}
+
+.artist-100-count{
+  color: #6BDDDD;
+  font-size: 24px;
+  margin-top: 0px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.detail-value {
+  font-size: 16px;
+  margin-top: 0px;
+  padding-left: 10px;
+}
+
+.room-label,
+.room-value {
+  align-self: flex-end;
+  color: white;
+  flex-direction: column;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  /* margin-top: 20px; */
+}
+
+.room-value {
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.reservation-background {
+  align-items: flex-start;
+  background-color: white;
+  color: grey;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.card {
+  align-self: center;
+  background-color: #F2F2F3;
+  color: grey;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px gray);
+  margin: 5px;
+  width: 250px;
+}
+
+.card:hover {
+  align-self: center;
+  background-color: #F2F2F3;
+  color: grey;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px gray);
+  margin: 5px;
+  opacity: 0.4;
+  width: 250px;
+}
+
+.card-header {
+  align-self: flex-start;
+  border-color: red;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 250px;
+  filter: brightness(70%);
+}
+
+.cost-label {
+  align-self: center;
+  background-color: white;
+  color: grey;
+  font-size: 12px;
+  height: 40px;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 225px;
+}
+
+.label-container {
+  height: 75px;
+  width: auto;
+
+}
+
+.nav-right {
+  align-self: flex-start;
+  background-color: inherit;
+  height: 40px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-text {
+  align-self: flex-end;
+  background-color: inherit;
+  color: white;
+  font-size: 12px;
+  margin: 5px;
+  padding-bottom: 10px;
+  width: 100px;
+  margin-left: 0px;
+}
+
+.nav-text-all-time {
+  align-self: flex-end;
+  color: black;
+  background-color: inherit;
+  font-size: 12px;
+  margin: 5px;
+  padding-bottom: 10px;
+  width: 100px;
+  text-align: left;
+  margin-left: 0px;
+}
+
+.reservation-history-label {
+  color: gray;
+  flex-direction: column;
+  font-size: 36px;
+  padding-top: 20px;
+
+}
+
+.menu-button {
+  height: 40px;
+  width: 40px;
+  align-self: flex-end;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+
+.user-menu {
+  align-self: flex-start;
+  background-color: inherit;
+  color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 12px;
+  height: 30px;
+  margin: 5px;
+  width: auto;
+}
+
+.account-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.cost-value {
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+.arrow {
+  margin: 0px;
+  width: 25px;
+  height: 25px;
+}
+
+
+
+
+@media screen and (max-width: 1040px) {
+
+html,
+body
+main {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+article {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  border: none;
+}
+
+
+header {
+  background-color: #DD6B6B;
+  border: none;
+  display: flex;
+  height: 75px;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  height: 100px;
+  width: 100%;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+
+section {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.room-search-form {
+  height: 200px;
+  width: 100%;
+  background-color: gray;
+  align-self: center;
+  display: flex;
+  align-items: center;
+
+}
+
+.logo-image {
+  width: 100px;
+  height: 100px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+
+.reservation-date {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.reservation-label {
+  font-size: 10px;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+
+.detail-label,
+.artist-100 {
+  font-size: 12px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.artist-100-count {
+  color: #6BDDDD;
+  font-size: 24px;
+  margin-top: 0px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.detail-value {
+  font-size: 16px;
+  margin-top: 0px;
+  padding-left: 10px;
+}
+
+.room-label,
+.room-value {
+  align-self: flex-end;
+  color: white;
+  flex-direction: column;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  /* margin-top: 20px; */
+}
+
+.room-value {
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.reservation-background {
+  align-items: flex-start;
+  background-color: white;
+  color: grey;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+
+.card {
+  align-self: center;
+  background-color: #F2F2F3;
+  color: grey;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px gray);
+  margin: 5px;
+  width: 250px;
+}
+
+.card:hover {
+  align-self: center;
+  background-color: #F2F2F3;
+  color: grey;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px gray);
+  margin: 5px;
+  opacity: 0.5;
+  width: 250px;
+}
+
+.card-header {
+  align-self: flex-start;
+  background-color: #FC0359;
+  border-color: red;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 250px;
+}
+
+.cost-label {
+  align-self: center;
+  background-color: white;
+  color: grey;
+  font-size: 12px;
+  height: 40px;
+  justify-content: flex-start;
+  width: 225px;
+}
+
+.nav-right {
+  align-self: flex-start;
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  width: 250px;
+}
+
+.nav-text {
+  align-self: flex-end;
+  background-color: inherit;
+  color: white;
+  font-size: 12px;
+  padding-bottom: 20px;
+  margin: 10px;
+  width: 25px;
+}
+
+.nav-text-all-time {
+  align-self: flex-end;
+  background-color: inherit;
+  color: black;
+  font-size: 12px;
+  margin: 10px;
+  padding-bottom: 20px;
+  width: 25px;
+}
+
+.reservation-history-label {
+  color: gray;
+  font-size: 22px;
+  padding-top: 20px;
+}
+
+.menu-button {
+  height: 0px;
+  width: 0px;
+  align-self: flex-end;
+  padding-bottom: 20px;
+}
+
+.user-menu {
+  background-color: inherit;
+  color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 12px;
+  height: 30px;
+  margin: 5px;
+  width: auto;
+}
+
+
+.cost-value {
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
 }
