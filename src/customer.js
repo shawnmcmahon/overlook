@@ -42,7 +42,7 @@ class Customer {
       this.expenseTotal = parseFloat(this.expenseTotal.toFixed(2))
     })
 
-    
+
   }
 
 
