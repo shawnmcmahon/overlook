@@ -24,7 +24,7 @@
        <div class="room-features">
           <div class="input room-type">
             <label for="roomType">Room Type: </label>
-            <select id="roomType" name="roomType">
+            <select id="bookRoomType" name="roomType">
               <option value="single room">single room</option>
               <option value="junior suite">junior suite</option>
               <option value="suite">suite</option>
@@ -33,105 +33,105 @@
           </div>
           <div class="input bed-num">
             <label for="numBeds">Number of Beds: </label>
-            <input type="number" class="num-beds" id="numBeds" name="beds" min="1" max="2" value="1"/>
+            <input type="number" class="num-beds" id="bookNumBeds" name="beds" min="1" max="2" value="1"/>
           </div>
           <!-- <button type="button" class="filter-button" id="filterRooms">Filter</button> -->
           <fieldset>
             <legend for="Bidet">Bidet?</legend>
             <div class="input">
-              <input type="radio" id="yes" name="Bidet" value="true" checked />
-              <label for="yes">Yes</label>
+              <input type="radio" id="bookYesBidet" name="Bidet" value="true" checked />
+              <label for="bookYesBidet">Yes</label>
             </div>
             <div class="input">
-              <input type="radio" id="no" name="Bidet" value=""/>
-              <label for="no">No</label>
+              <input type="radio" id="bookNoBidet" name="Bidet" value=""/>
+              <label for="bookNoBidet">No</label>
             </div>
             <div class="input">
-              <input type="radio" id="doesntMatter" name="Bidet"
+              <input type="radio" id="bookNPBidet" name="Bidet"
               value="maybe"/>
-              <label for="doesntMatter">No Preference</label>
+              <label for="bookNPBidet">No Preference</label>
             </div>
           </fieldset>
-              <button type="button" class="" id="filterRooms">Filter</button>
+              <button type="button" class="" id="searchRooms">Search</button>
               <button type="button" class="" id="bookRoom">Book</button>
         </div>
       </section>
       <div class="label-container">
         <p class="reservation-history-label">Available Rooms</p>
       </div>
-      <section class="reservation-background">
+      <section class="reservation-background" id="availableRoomsBackground">
         <article class="card" tabindex="0">
           <section class="card-header">
               <p class="room-label">Room Number</p>
-              <p class="room-value">01</p>
+              <p class="room-value" id="roomNumber">01</p>
           </section>
-            <p class="reservation-date" aria-label="Reservation Date">04/21/2020</p>
+            <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">04/21/2020</p>
             <p class="reservation-label">Reservation Date</p>
           <section class="cost-label">
-            <p class="cost-value" aria-label="Cost Per Night">$365 Per Night</p>
+            <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$365 Per Night</p>
           </section>
             <p class="detail-label">Room Type</p>
-            <p class="detail-value">King</p>
+            <p class="detail-value" id="roomType">King</p>
             <p class="detail-label">Number of Beds</p>
-            <p class="detail-value">2</p>
+            <p class="detail-value" id="roomNumberOfBeds">2</p>
             <p class="detail-label">Bidet</p>
-            <p class="detail-value">Yes</p>
+            <p class="detail-value" id="roomBidet">Yes</p>
         </article>
-        <article class="card" tabindex="0">
+        <article class="card">
           <section class="card-header">
               <p class="room-label">Room Number</p>
-              <p class="room-value">01</p>
+              <p class="room-value" id="roomNumber">01</p>
           </section>
-            <p class="reservation-date" aria-label="Reservation Date">04/21/2020</p>
+            <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">04/21/2020</p>
             <p class="reservation-label">Reservation Date</p>
           <section class="cost-label">
-            <p class="cost-value" aria-label="Cost Per Night">$365 Per Night</p>
+            <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$365 Per Night</p>
           </section>
             <p class="detail-label">Room Type</p>
-            <p class="detail-value">King</p>
+            <p class="detail-value" id="roomType">King</p>
             <p class="detail-label">Number of Beds</p>
-            <p class="detail-value">2</p>
+            <p class="detail-value" id="roomNumberOfBeds">2</p>
             <p class="detail-label">Bidet</p>
-            <p class="detail-value">Yes</p>
+            <p class="detail-value" id="roomBidet">Yes</p>
         </article>
       </section>
       <div class="label-container">
         <p class="reservation-history-label">Your Reservation History</p>
       </div>
-      <section class="reservation-background">
+      <section class="reservation-background" id="reservationHistoryBackground">
         <article class="card">
           <section class="card-header">
               <p class="room-label">Room Number</p>
-              <p class="room-value">01</p>
+              <p class="room-value" id="roomNumber">01</p>
           </section>
-            <p class="reservation-date" aria-label="Reservation Date">04/21/2020</p>
+            <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">04/21/2020</p>
             <p class="reservation-label">Reservation Date</p>
           <section class="cost-label">
-            <p class="cost-value" aria-label="Cost Per Night">$365 Per Night</p>
+            <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$365 Per Night</p>
           </section>
             <p class="detail-label">Room Type</p>
-            <p class="detail-value">King</p>
+            <p class="detail-value" id="roomType">King</p>
             <p class="detail-label">Number of Beds</p>
-            <p class="detail-value">2</p>
+            <p class="detail-value" id="roomNumberOfBeds">2</p>
             <p class="detail-label">Bidet</p>
-            <p class="detail-value">Yes</p>
-            <article class="card" tabindex="0">
-              <section class="card-header">
-                  <p class="room-label">Room Number</p>
-                  <p class="room-value">01</p>
-              </section>
-                <p class="reservation-date" aria-label="Reservation Date">04/21/2020</p>
-                <p class="reservation-label">Reservation Date</p>
-              <section class="cost-label">
-                <p class="cost-value" aria-label="Cost Per Night">$365 Per Night</p>
-              </section>
-                <p class="detail-label">Room Type</p>
-                <p class="detail-value">King</p>
-                <p class="detail-label">Number of Beds</p>
-                <p class="detail-value">2</p>
-                <p class="detail-label">Bidet</p>
-                <p class="detail-value">Yes</p>
-            </article>
+            <p class="detail-value" id="roomBidet">Yes</p>
+        </article>
+        <article class="card">
+          <section class="card-header">
+              <p class="room-label">Room Number</p>
+              <p class="room-value" id="roomNumber">01</p>
+          </section>
+            <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">04/21/2020</p>
+            <p class="reservation-label">Reservation Date</p>
+          <section class="cost-label">
+            <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$365 Per Night</p>
+          </section>
+            <p class="detail-label">Room Type</p>
+            <p class="detail-value" id="roomType">King</p>
+            <p class="detail-label">Number of Beds</p>
+            <p class="detail-value" id="roomNumberOfBeds">2</p>
+            <p class="detail-label">Bidet</p>
+            <p class="detail-value" id="roomBidet">Yes</p>
         </article>
       </section>
 
