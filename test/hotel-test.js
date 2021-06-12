@@ -89,7 +89,7 @@ beforeEach(() => {
   })
 
   describe('Hotel Methods', () => {
-    it.only('should have a method that finds all available rooms for a given date', () => {
+    it('should have a method that finds all available rooms for a given date', () => {
       const availableRooms = hotel.findAvailableRooms("2020/04/22");
       expect(availableRooms).to.eql([['2020/04/22', room2], ['2020/04/22',room3]])
     })

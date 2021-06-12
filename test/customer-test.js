@@ -141,12 +141,12 @@ describe('Customer Class', () => {
       const customer1ExpenseTotal = customer1.findExpenseTotal(sampleBookingData, sampleRoomData);
       const customer2ExpenseTotal = customer2.findExpenseTotal(sampleBookingData, sampleRoomData);
       const customer3ExpenseTotal = customer3.findExpenseTotal(sampleBookingData, sampleRoomData);
-      expect(customer1.expenseTotal).to.equal(716.80);
-      expect(customer2.expenseTotal).to.equal(954.76);
+      expect(customer1.expenseTotal).to.equal(358.4);
+      expect(customer2.expenseTotal).to.equal(477.38);
       expect(customer3.expenseTotal).to.equal(491.14);
     });
 
-  
+
 
   })
 
