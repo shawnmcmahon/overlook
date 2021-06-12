@@ -24,8 +24,27 @@ class Hotel {
     }, [])
 
     this.availableRooms = foundRooms;
-    return this.availableRooms
+    return this.availableRooms;
   }
+
+  filterSearchResults(searchData) {
+    this.findAvailableRooms(this.searchDate);
+    // console.log('availablerooms:', this.availableRooms)
+    const searchResults = this.availableRooms.filter(currentRoom =>
+      currentRoom[1].roomType === searchData.roomType &&
+      (currentRoom[1].bidet === (searchData.bidet === 'true') ||
+      searchData.bidet === 'maybe') &&
+      currentRoom[1].numBeds == searchData.numBeds);
+
+    this.roomSearchResults = searchResults;
+    return this.roomSearchResults;
+
+  }
+
+
+
+
+
 }
 
 export default Hotel

@@ -92,7 +92,24 @@ beforeEach(() => {
     it('should have a method that finds all available rooms for a given date', () => {
       const availableRooms = hotel.findAvailableRooms("2020/04/22");
       expect(availableRooms).to.eql([['2020/04/22', room2], ['2020/04/22',room3]])
-    })
+    });
+
+    it('should have a method that filters available rooms by search', () => {
+      const searchProperties = {'roomType': 'single room', 'bedsize': 'king', 'numBeds': 1}
+      hotel.findAvailableRooms("2020/04/22");
+      const results = hotel.filterSearchResults(searchProperties);
+      expect(hotel.roomSearchResults).to.eql([[
+        '2020/04/22',
+        {
+          number: 3,
+          roomType: 'single room',
+          bidet: false,
+          bedSize: 'king',
+          numBeds: 1,
+          costPerNight: 491.14
+        }
+      ]]);
+    });
 
   })
 
