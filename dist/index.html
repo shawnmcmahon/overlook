@@ -15,6 +15,47 @@
           <h1 class="reservation-history-label">OVERLOOK HOTEL</button>
         </nav>
       </header>
+      <section class="room-search-form">
+        <div class="input date">
+         <label for="bookDate">Date: </label>
+         <input type="date" id="bookDate" name="Book Date"
+         value="2020-07-04" min="2020-01-01" max="2022-01-01"/>
+       </div>
+       <div class="room-features">
+          <div class="input room-type">
+            <label for="roomType">Room Type: </label>
+            <select id="roomType" name="roomType">
+              <option value="single room">single room</option>
+              <option value="junior suite">junior suite</option>
+              <option value="suite">suite</option>
+              <option value="residential suite">residential suite</option>
+            </select>
+          </div>
+          <div class="input bed-num">
+            <label for="numBeds">Number of Beds: </label>
+            <input type="number" class="num-beds" id="numBeds" name="beds" min="1" max="2" value="1"/>
+          </div>
+          <!-- <button type="button" class="filter-button" id="filterRooms">Filter</button> -->
+          <fieldset>
+            <legend for="Bidet">Bidet?</legend>
+            <div class="input">
+              <input type="radio" id="yes" name="Bidet" value="true" checked />
+              <label for="yes">Yes</label>
+            </div>
+            <div class="input">
+              <input type="radio" id="no" name="Bidet" value=""/>
+              <label for="no">No</label>
+            </div>
+            <div class="input">
+              <input type="radio" id="doesntMatter" name="Bidet"
+              value="maybe"/>
+              <label for="doesntMatter">No Preference</label>
+            </div>
+          </fieldset>
+              <button type="button" class="" id="filterRooms">Filter</button>
+              <button type="button" class="" id="bookRoom">Book</button>
+        </div>
+      </section>
       <div class="label-container">
         <p class="reservation-history-label">Available Rooms</p>
       </div>

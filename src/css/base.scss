@@ -35,7 +35,7 @@ header {
   background-color: #DD6B6B;
   border: none;
   display: flex;
-  height: 125px;
+  height: 75px;
   margin-right: 10px;
   outline: none;
   width: 100%;
@@ -67,6 +67,15 @@ section {
   flex-direction: column;
   justify-content: center;
   outline: none;
+}
+
+.room-search-form {
+  height: 200px;
+  width: 100%;
+  background-color: gray;
+  align-self: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo-image {
@@ -128,12 +137,12 @@ section {
 }
 
 .reservation-background {
-  align-items: center;
+  align-items: flex-start;
   background-color: white;
   color: grey;
   // flex-direction: row;
   flex-wrap: wrap;
-  height: 30%;
+  height: 400px;
   width: 100%;
   overflow-x: scroll;
 }
@@ -181,7 +190,7 @@ section {
 }
 
 .label-container {
-  height: 100px;
+  height: 75px;
   width: auto;
 
 }
@@ -297,7 +306,7 @@ header {
   background-color: #DD6B6B;
   border: none;
   display: flex;
-  height: 125px;
+  height: 75px;
   width: 100%;
 }
 
@@ -324,6 +333,16 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.room-search-form {
+  height: 200px;
+  width: 100%;
+  background-color: gray;
+  align-self: center;
+  display: flex;
+  align-items: center;
+
 }
 
 .logo-image {
@@ -391,7 +410,7 @@ section {
   color: grey;
   // flex-direction: row;
   flex-wrap: wrap;
-  height: 30%;
+  height: 400px;
   width: 100%;
   overflow-x: scroll;
 }
