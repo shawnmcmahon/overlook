@@ -89,6 +89,48 @@ beforeEach(() => {
   })
 
   describe('Hotel Methods', () => {
+    it('should have a method that finds all available rooms for a given date', () => {
+      const availableRooms = hotel.findAvailableRooms("2020/04/22");
+      expect(availableRooms).to.eql([['2020/04/22', room2], ['2020/04/22',room3]])
+    });
+
+    it('should have a method that filters available rooms by search', () => {
+      const searchProperties = {'roomType': 'single room', 'bedsize': 'king', 'numBeds': 1}
+      hotel.findAvailableRooms("2020/04/22");
+      const results = hotel.filterSearchResults(searchProperties);
+      expect(hotel.roomSearchResults).to.eql([[
+        '2020/04/22',
+        {
+          number: 3,
+          roomType: 'single room',
+          bidet: false,
+          bedSize: 'king',
+          numBeds: 1,
+          costPerNight: 491.14
+        }
+      ]]);
+    });
+
+    it('should have a method that requests a room to be booked', () => {
+      hotel.findAvailableRooms('2020/04/22');
+      hotel.requestRoom(2);
+      expect(hotel.requestedRoom).to.eql([
+        '2020/04/22',
+        {
+          number: 2,
+          roomType: 'suite',
+          bidet: false,
+          bedSize: 'full',
+          numBeds: 2,
+          costPerNight: 477.38
+        }
+      ])
+    });
+
+    it('should have a method that adds a booking to the booking data', () =>  {
+      //Does this belong in the customer class, hotel class, or scripts because of the required POST?
+      //hotel.reserveRoom()?
+    });
 
 
   })
