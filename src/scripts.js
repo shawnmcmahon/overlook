@@ -11,7 +11,7 @@ import './css/base.scss';
 import Customer from './customer';
 import Hotel from './hotel';
 import apiCalls from './apiCalls';
-// import domUpdates from './domUpdates';
+import domUpdates from './domUpdates';
 
 // import Images here
 
@@ -48,27 +48,35 @@ function loadPage() {
    apiCalls.retrieveData()
     .then((promise) => {
       console.log('promise from scripts:', promise)
-      customerData = promise[0].customers;
+      customerData = promise[0];
       //console.log(customerData[0])
-      roomData = promise[1].rooms;
+      roomData = promise[1];
       //console.log(roomData)
-      bookingData = promise[2].bookings
+      bookingData = promise[2]
       // console.log(bookingData)
       hotel = new Hotel(roomData, bookingData, customerData)
       // console.log(hotel)
-      customer = new Customer(customerData[0])
-      console.log(customer)
+      customer = new Customer(customerData.customers[0])
+      //Scripts function that will run customer methods to find findBookingHistory
+      customer.findBookingHistory(bookingData);
+      customer.findExpenseTotal(bookingData, roomData);
+      // console.log(customer)
+      // console.log('booking data in scripts:', bookingData)
+      // retrieveCustomerData(bookingData, roomData);
+      // console.log(customer)
     })
-    //Scripts function that will run customer methods to find findBookingHistory
     //and expense history
-
+    // console.log('customer:', customer)
     //DOM Updates function that updates the user's info to the DOM
+
 }
 
-function retrieveCustomerData(customerData, bookingData, roomData) {
-  customer.findBookingHistory(bookingData)
-  customer.findExpenseTotal(bookingData, roomData)
-  //DOM Updates function that updates the user's info to the DOM
+function retrieveCustomerData(bookingData, roomData, customer) {
+  // console.log('customer:', customer)
+  console.log('booking data retrieveCustomerData', bookingData)
+
+  customer.findBookingHistory(bookingData);
+  customer.findExpenseTotal(bookingData, roomData);
 
 
 }
