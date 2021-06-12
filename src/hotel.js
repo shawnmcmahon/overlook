@@ -30,7 +30,6 @@ class Hotel {
 
   filterSearchResults(searchData) {
     this.findAvailableRooms(this.searchDate);
-    //console.log('availablerooms:', this.availableRooms)
     const searchResults = this.availableRooms.filter(currentRoom =>
       currentRoom[1].roomType === searchData.roomType &&
       (currentRoom[1].bidet === (searchData.bidet === 'true') ||
@@ -38,7 +37,7 @@ class Hotel {
       currentRoom[1].numBeds == searchData.numBeds);
 
     this.roomSearchResults = searchResults;
-    //console.log('roomSearchResults', this.roomSearchResults)
+
     return this.roomSearchResults;
 
   }
@@ -47,9 +46,11 @@ class Hotel {
     this.requestedRoom = this.availableRooms.find(currentRoom => {
       return currentRoom[1].number === roomNumber
     });
-    
+
     return this.requestedRoom;
   }
+
+
 
 
 

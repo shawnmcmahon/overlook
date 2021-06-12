@@ -146,6 +146,12 @@ describe('Customer Class', () => {
       expect(customer3.expenseTotal).to.equal(491.14);
     });
 
+    it('should have a method that adds a booking to the booking data', () =>  {
+      //Does this belong in the customer class, hotel class, or scripts because of the required POST?
+      //customer.reserveRoom()?
+    });
+
+
 
 
   })

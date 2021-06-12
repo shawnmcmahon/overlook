@@ -111,7 +111,7 @@ beforeEach(() => {
       ]]);
     });
 
-    it.only('should have a method that requests a room to be booked', () => {
+    it('should have a method that requests a room to be booked', () => {
       hotel.findAvailableRooms('2020/04/22');
       hotel.requestRoom(2);
       expect(hotel.requestedRoom).to.eql([
@@ -126,6 +126,12 @@ beforeEach(() => {
         }
       ])
     });
+
+    it('should have a method that adds a booking to the booking data', () =>  {
+      //Does this belong in the customer class, hotel class, or scripts because of the required POST?
+      //hotel.reserveRoom()?
+    });
+
 
   })
 
