@@ -25,8 +25,19 @@ const checkForError = (response) => {
   }
 }
 
+function addNewBooking(bookingData, roomData, booking) {
+  return fetch('http://localhost:3001/api/v1/bookings', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(booking)
+    })
+    .then(response => checkForError(response))
+    .catch(error => console.error(`POST Request Error: ${error.message}`))
+
+}
+
 const retrieveData = () => {
   return Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()])
 }
 
-export default {fetchCustomerData, fetchRoomData, fetchBookingData, retrieveData}
+export default {fetchCustomerData, fetchRoomData, fetchBookingData, retrieveData, addNewBooking}
