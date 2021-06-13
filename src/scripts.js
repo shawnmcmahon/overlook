@@ -40,15 +40,17 @@ let roomCost = document.getElementById('roomCost');
 let roomType = document.getElementById('roomType');
 let roomNumberOfBeds = document.getElementById('roomNumberOfBeds');
 let roomBidet = document.getElementById('roomBidet');
+let card = document.getElementById('card');
 
 // Variables
 let bookingData, roomData, customerData, customer, hotel;
 let todaysDate ='2020/06/19';
+let populatedCards;
 // Event Listeners
 window.onload = loadPage();
 searchButton.addEventListener('click', () => searchRooms())
-
-
+// populatedCards.addEventListener('click', (e) => selectRoom(e))
+availableRoomsBackground.addEventListener('click', (e) => selectRoom(e))
 
 
 function loadPage(bookingData, roomData, customer) {
@@ -69,6 +71,7 @@ function loadPage(bookingData, roomData, customer) {
       domUpdates.displayHeaderInfo(customer, todaysDate)
       domUpdates.displayCustomerInfo(customer.roomHistory);
       domUpdates.displayAvailableRooms(hotel, todaysDate)
+      // let populatedCards = document.getElementById('card');
     })
     // console.log('customer:', customer)
 
@@ -96,4 +99,16 @@ function searchRooms() {
     'roomType': bookRoomType.value
   }
   domUpdates.displaySearchResults(hotel, searchData);
+}
+
+function selectRoom(event, hotel) {
+  // console.log("event", event.target.closest("article").id)\
+  const integerId = parseInt(event.target.closest("article").id)
+  console.log(integerId)
+  hotel.requestRoom(integerId)
+  // console.log(hotel)
+  // if (event.target.lastElementChild.innerText === roomNumber) {
+  //   console.log("click registered", card)
+  // }
+  // console.log(hotel)
 }

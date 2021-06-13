@@ -33,11 +33,6 @@ class Hotel {
     const searchResults = this.availableRooms.filter(currentRoom =>
       currentRoom[1].roomType === searchData.roomType)
 
-    // const searchResults = this.availableRooms.filter(currentRoom =>
-    //   currentRoom[1].roomType === searchData.roomType &&
-    //   (currentRoom[1].bidet === (searchData.bidet === 'true') ||
-    //   searchData.bidet === 'maybe') &&
-    //   currentRoom[1].numBeds == searchData.numBeds)
 
     this.roomSearchResults = searchResults;
 
@@ -46,6 +41,7 @@ class Hotel {
   }
 
   requestRoom(roomNumber) {
+    console.log('room number in hotel', roomNumber)
     this.requestedRoom = this.availableRooms.find(currentRoom => {
       return currentRoom[1].number === roomNumber
     });
