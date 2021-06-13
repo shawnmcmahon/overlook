@@ -41,7 +41,7 @@ const domUpdates = {
     hotel.findAvailableRooms(todaysDate);
     // console.log('hotel:', hotel)
     hotel.availableRooms.forEach(currentRoom => {
-      console.log('currentRoom:', currentRoom)
+      // console.log('currentRoom:', currentRoom)
       availableRoomsBackground.innerHTML += `
       <article class="card" id="${currentRoom[1].number}">
         <section class="card-header">

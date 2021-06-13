@@ -50,7 +50,7 @@ let populatedCards;
 window.onload = loadPage();
 searchButton.addEventListener('click', () => searchRooms())
 // populatedCards.addEventListener('click', (e) => selectRoom(e))
-availableRoomsBackground.addEventListener('click', (e) => selectRoom(e))
+availableRoomsBackground.addEventListener('click', (e) => selectRoom(e, hotel))
 
 
 function loadPage(bookingData, roomData, customer) {
@@ -103,8 +103,9 @@ function searchRooms() {
 
 function selectRoom(event, hotel) {
   // console.log("event", event.target.closest("article").id)\
-  const integerId = parseInt(event.target.closest("article").id)
+  const integerId = parseInt(event.target.closest('article').id)
   console.log(integerId)
+  console.log(hotel)
   hotel.requestRoom(integerId)
   // console.log(hotel)
   // if (event.target.lastElementChild.innerText === roomNumber) {
