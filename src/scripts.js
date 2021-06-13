@@ -85,3 +85,10 @@ function retrieveDate() {
   bookDate.min = todaysDate;
   bookDate.value = todaysDate.split('/').join('-');
 }
+
+function searchRooms() {
+  let searchData = {
+    'roomType': bookRoomType,
+    'bedsize': 'king',
+    'numBeds': bookNumBeds}
+}
