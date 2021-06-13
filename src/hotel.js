@@ -31,10 +31,13 @@ class Hotel {
   filterSearchResults(searchData) {
     this.findAvailableRooms(this.searchDate);
     const searchResults = this.availableRooms.filter(currentRoom =>
-      currentRoom[1].roomType === searchData.roomType &&
-      (currentRoom[1].bidet === (searchData.bidet === 'true') ||
-      searchData.bidet === 'maybe') &&
-      currentRoom[1].numBeds == searchData.numBeds);
+      currentRoom[1].roomType === searchData.roomType)
+
+    // const searchResults = this.availableRooms.filter(currentRoom =>
+    //   currentRoom[1].roomType === searchData.roomType &&
+    //   (currentRoom[1].bidet === (searchData.bidet === 'true') ||
+    //   searchData.bidet === 'maybe') &&
+    //   currentRoom[1].numBeds == searchData.numBeds)
 
     this.roomSearchResults = searchResults;
 

@@ -69,6 +69,7 @@ const domUpdates = {
 
     hotel.filterSearchResults(searchData)
     console.log('hotel', hotel)
+    availableRoomsBackground.innerHTML = ' ';
     hotel.roomSearchResults.forEach(currentRoom => {
       console.log('currentRoom:', currentRoom)
       availableRoomsBackground.innerHTML += `

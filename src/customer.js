@@ -9,7 +9,7 @@ class Customer {
 
   findBookingHistory(bookingData) {
     //console.log('booking data?', bookingData)
-    this.bookingHistory = bookingData.bookings.filter(booking => booking.userID === this.id);
+    this.bookingHistory = bookingData.bookings.filter(booking => booking.userID === this.id).sort().reverse();
     return this.bookingHistory;
   }
 

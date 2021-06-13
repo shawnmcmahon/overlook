@@ -92,8 +92,8 @@ function retrieveDate() {
 function searchRooms() {
   console.log("bookdate", bookDate.value)
   let searchData = {
-    'date': bookDate,
-    'roomType': bookRoomType
+    'date': bookDate.value,
+    'roomType': bookRoomType.value
   }
   domUpdates.displaySearchResults(hotel, searchData);
 }
