@@ -19,7 +19,10 @@ import domUpdates from './domUpdates';
 //Page Selectors
 let availableRoomsBackground = document.getElementById('availableRoomsBackground');
 let reservationHistoryBackground = document.getElementById('reservationHistoryBackground');
-
+//Nav Selectors
+let welcome = document.getElementById('welcome');
+let expenseHistory = document.getElementById('expenseHistory');
+let date = document.getElementById('date');
 //Form selectors
 let bookDate = document.getElementById('bookDate');
 let bookRoomType = document.getElementById('bookRoomType');
@@ -40,11 +43,12 @@ let roomBidet = document.getElementById('roomBidet');
 
 // Variables
 let bookingData, roomData, customerData, customer, hotel;
+let todaysDate ='2020/06/19'
 // Event Listeners
 window.onload = loadPage();
 
 
-function loadPage() {
+function loadPage(bookingData, roomData, customer) {
    apiCalls.retrieveData()
     .then((promise) => {
       console.log('promise from scripts:', promise)
@@ -57,26 +61,27 @@ function loadPage() {
       hotel = new Hotel(roomData, bookingData, customerData)
       // console.log(hotel)
       customer = new Customer(customerData.customers[0])
-      //Scripts function that will run customer methods to find findBookingHistory
-      customer.findBookingHistory(bookingData);
-      customer.findExpenseTotal(bookingData, roomData);
-      // console.log(customer)
-      // console.log('booking data in scripts:', bookingData)
-      // retrieveCustomerData(bookingData, roomData);
-      // console.log(customer)
+      retrieveDate();
+      retrieveCustomerData(bookingData, roomData, customer);
+      domUpdates.displayHeaderInfo(customer, todaysDate)
+      domUpdates.displayCustomerInfo(customer.roomHistory);
+      domUpdates.displayAvailableRooms(hotel, todaysDate)
     })
-    //and expense history
     // console.log('customer:', customer)
-    //DOM Updates function that updates the user's info to the DOM
 
 }
 
 function retrieveCustomerData(bookingData, roomData, customer) {
-  // console.log('customer:', customer)
+  console.log('customer:', customer)
   console.log('booking data retrieveCustomerData', bookingData)
 
   customer.findBookingHistory(bookingData);
+  customer.findRoomHistoryWithDate(bookingData, roomData)
   customer.findExpenseTotal(bookingData, roomData);
 
+}
 
+function retrieveDate() {
+  bookDate.min = todaysDate;
+  bookDate.value = todaysDate.split('/').join('-');
 }

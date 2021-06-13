@@ -21,7 +21,7 @@ class Customer {
       return roomWithDate
     });
 
-    this.roomHistory = roomHistoryWithDates;
+    this.roomHistory = roomHistoryWithDates.sort().reverse()
     // console.log(this.roomHistory)
     return this.roomHistory;
   }
