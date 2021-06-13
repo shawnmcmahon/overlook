@@ -19,7 +19,10 @@ import domUpdates from './domUpdates';
 //Page Selectors
 let availableRoomsBackground = document.getElementById('availableRoomsBackground');
 let reservationHistoryBackground = document.getElementById('reservationHistoryBackground');
-
+//Nav Selectors
+let welcome = document.getElementById('welcome');
+let expenseHistory = document.getElementById('expenseHistory');
+let date = document.getElementById('date');
 //Form selectors
 let bookDate = document.getElementById('bookDate');
 let bookRoomType = document.getElementById('bookRoomType');
@@ -66,6 +69,7 @@ function loadPage(bookingData, roomData, customer) {
       // console.log(customer)
       //DOM Updates function that updates the user's info to the DOM
       //and expense history
+      domUpdates.displayHeaderInfo(customer, todaysDate)
       domUpdates.displayCustomerInfo(customer.roomHistory);
     })
     // console.log('customer:', customer)
