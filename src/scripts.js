@@ -43,20 +43,23 @@ let roomBidet = document.getElementById('roomBidet');
 
 // Variables
 let bookingData, roomData, customerData, customer, hotel;
-let todaysDate ='2020/06/19'
+let todaysDate ='2020/06/19';
 // Event Listeners
 window.onload = loadPage();
+searchButton.addEventListener('click', () => searchRooms())
+
+
 
 
 function loadPage(bookingData, roomData, customer) {
    apiCalls.retrieveData()
     .then((promise) => {
-      console.log('promise from scripts:', promise)
+      // console.log('promise from scripts:', promise)
       customerData = promise[0];
       //console.log(customerData[0])
       roomData = promise[1];
       //console.log(roomData)
-      bookingData = promise[2]
+      bookingData = promise[2];
       // console.log(bookingData)
       hotel = new Hotel(roomData, bookingData, customerData)
       // console.log(hotel)
@@ -72,8 +75,8 @@ function loadPage(bookingData, roomData, customer) {
 }
 
 function retrieveCustomerData(bookingData, roomData, customer) {
-  console.log('customer:', customer)
-  console.log('booking data retrieveCustomerData', bookingData)
+  // console.log('customer:', customer)
+  // console.log('booking data retrieveCustomerData', bookingData)
 
   customer.findBookingHistory(bookingData);
   customer.findRoomHistoryWithDate(bookingData, roomData)
@@ -84,4 +87,13 @@ function retrieveCustomerData(bookingData, roomData, customer) {
 function retrieveDate() {
   bookDate.min = todaysDate;
   bookDate.value = todaysDate.split('/').join('-');
+}
+
+function searchRooms() {
+  console.log("bookdate", bookDate.value)
+  let searchData = {
+    'date': bookDate.value,
+    'roomType': bookRoomType.value
+  }
+  domUpdates.displaySearchResults(hotel, searchData);
 }
