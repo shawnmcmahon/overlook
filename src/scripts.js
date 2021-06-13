@@ -61,16 +61,11 @@ function loadPage(bookingData, roomData, customer) {
       hotel = new Hotel(roomData, bookingData, customerData)
       // console.log(hotel)
       customer = new Customer(customerData.customers[0])
-      //Scripts function that will run customer methods to find findBookingHistory
       retrieveDate();
-      // console.log(customer)
-      // console.log('booking data in scripts:', bookingData)
       retrieveCustomerData(bookingData, roomData, customer);
-      // console.log(customer)
-      //DOM Updates function that updates the user's info to the DOM
-      //and expense history
       domUpdates.displayHeaderInfo(customer, todaysDate)
       domUpdates.displayCustomerInfo(customer.roomHistory);
+      domUpdates.displayAvailableRooms(hotel, todaysDate)
     })
     // console.log('customer:', customer)
 
