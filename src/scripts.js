@@ -40,11 +40,12 @@ let roomBidet = document.getElementById('roomBidet');
 
 // Variables
 let bookingData, roomData, customerData, customer, hotel;
+let todaysDate ='2020/06/19'
 // Event Listeners
 window.onload = loadPage();
 
 
-function loadPage() {
+function loadPage(bookingData, roomData, customer) {
    apiCalls.retrieveData()
     .then((promise) => {
       console.log('promise from scripts:', promise)
@@ -58,25 +59,30 @@ function loadPage() {
       // console.log(hotel)
       customer = new Customer(customerData.customers[0])
       //Scripts function that will run customer methods to find findBookingHistory
-      customer.findBookingHistory(bookingData);
-      customer.findExpenseTotal(bookingData, roomData);
+      retrieveDate();
       // console.log(customer)
       // console.log('booking data in scripts:', bookingData)
-      // retrieveCustomerData(bookingData, roomData);
+      retrieveCustomerData(bookingData, roomData, customer);
       // console.log(customer)
+      //DOM Updates function that updates the user's info to the DOM
+      //and expense history
+      domUpdates.displayCustomerInfo(customer.roomHistory);
     })
-    //and expense history
     // console.log('customer:', customer)
-    //DOM Updates function that updates the user's info to the DOM
 
 }
 
 function retrieveCustomerData(bookingData, roomData, customer) {
-  // console.log('customer:', customer)
+  console.log('customer:', customer)
   console.log('booking data retrieveCustomerData', bookingData)
 
   customer.findBookingHistory(bookingData);
+  customer.findRoomHistoryWithDate(bookingData, roomData)
   customer.findExpenseTotal(bookingData, roomData);
 
+}
 
+function retrieveDate() {
+  bookDate.min = todaysDate;
+  bookDate.value = todaysDate.split('/').join('-');
 }
