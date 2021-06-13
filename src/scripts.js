@@ -90,5 +90,6 @@ function searchRooms() {
   let searchData = {
     'roomType': bookRoomType,
     'bedsize': 'king',
-    'numBeds': bookNumBeds}
+    'numBeds': bookNumBeds
+  }
 }

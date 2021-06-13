@@ -87,7 +87,9 @@ const domUpdates = {
           <p class="detail-value" id="roomBidet">${currentRoom[1].bidet}</p>
       </article>`
 
-  })
+
+    })
+  }
 }
 
 export default domUpdates;
