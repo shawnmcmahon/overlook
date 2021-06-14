@@ -136,8 +136,15 @@ function logIn(hotel) {
     // console.log('currentCustomer:', currentCustomer.id)
     return currentCustomer.id === userID
   });
+  console.log('passwordValue:', password.value)
   // console.log('foundCustomer:', foundCustomer)
-
+  if (foundCustomer && password.value === 'overlook2021') {
+    //unhide all elements that are hidden (domUpdates function)
+    console.log('we did it!')
+    domUpdates.displayLogInSuccess()
+  } else {
+    //unhide the display-error p tag
+  }
 
 
 }
