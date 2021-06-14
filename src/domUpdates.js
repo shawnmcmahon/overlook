@@ -1,4 +1,6 @@
 //Global querySelectors/getElementByIds
+let card = document.getElementById('card');
+
 
 const domUpdates = {
   displayHeaderInfo(customer, todaysDate) {
@@ -14,7 +16,7 @@ const domUpdates = {
     customerData.forEach(currentBooking => {
       //console.log("currentBooking:", currentBooking)
       reservationHistoryBackground.innerHTML += `
-      <article class="card">
+      <article class="card" id="card">
         <section class="card-header">
             <p class="room-label">Room Number</p>
             <p class="room-value" id="roomNumber">${currentBooking[1].number}</p>
@@ -41,7 +43,7 @@ const domUpdates = {
     hotel.availableRooms.forEach(currentRoom => {
       // console.log('currentRoom:', currentRoom)
       availableRoomsBackground.innerHTML += `
-      <article class="card">
+      <article class="card" id="${currentRoom[1].number}">
         <section class="card-header">
             <p class="room-label">Room Number</p>
             <p class="room-value" id="roomNumber">${currentRoom[1].number}</p>
@@ -49,7 +51,7 @@ const domUpdates = {
           <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">${currentRoom[0]}</p>
           <p class="reservation-label">Reservation Date</p>
         <section class="cost-label">
-          <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$   ${currentRoom[1].costPerNight} Per Night</p>
+          <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$ ${currentRoom[1].costPerNight} Per Night</p>
         </section>
           <p class="detail-label">Room Type</p>
           <p class="detail-value" id="roomType">${currentRoom[1].roomType}</p>
@@ -58,7 +60,6 @@ const domUpdates = {
           <p class="detail-label">Bidet</p>
           <p class="detail-value" id="roomBidet">${currentRoom[1].bidet}</p>
       </article>`
-
     })
 
   },
@@ -73,10 +74,10 @@ const domUpdates = {
     hotel.roomSearchResults.forEach(currentRoom => {
       console.log('currentRoom:', currentRoom)
       availableRoomsBackground.innerHTML += `
-      <article class="card">
-        <section class="card-header">
+      <article class="card" id="${currentRoom[1].number}" dataset-id="${currentRoom[1].number}">
+        <section class="card-header" id="${currentRoom[1].number}card-header">
             <p class="room-label">Room Number</p>
-            <p class="room-value" id="roomNumber">${currentRoom[1].number}</p>
+            <p class="room-value" id="${currentRoom[1].number}roomNumber">${currentRoom[1].number}</p>
         </section>
           <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">${currentRoom[0]}</p>
           <p class="reservation-label">Reservation Date</p>
@@ -93,6 +94,10 @@ const domUpdates = {
 
 
     })
+  },
+
+  displaySelectedCard() {
+
   }
 }
 

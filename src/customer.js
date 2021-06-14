@@ -41,8 +41,19 @@ class Customer {
       })
       this.expenseTotal = parseFloat(this.expenseTotal.toFixed(2))
     })
+    return this.expenseTotal;
 
 
+  }
+
+  reserveRoom(bookingData, roomData, requestedRoom) {
+    let booking = {
+      'userID': this.id,
+      'date': requestedRoom[0],
+      'roomNumber': requestedRoom[1].number,
+      'roomServiceCharges': []
+    }
+    domUpdates.addNewBooking(bookingData, roomData, booking)
   }
 
 
