@@ -24,7 +24,7 @@ let welcome = document.getElementById('welcome');
 let expenseHistory = document.getElementById('expenseHistory');
 let date = document.getElementById('date');
 //Form selectors
-let bookDate = document.getElementById('bookDate');
+let bookDate = document.getElementById('bookDate')
 let bookRoomType = document.getElementById('bookRoomType');
 let bookNumBeds = document.getElementById('bookNumBeds');
 let bookYesBidet = document.getElementById('bookYesBidet');
@@ -46,6 +46,10 @@ let card = document.getElementById('card');
 let bookingData, roomData, customerData, customer, hotel;
 let todaysDate ='2020/06/19';
 let populatedCards;
+
+// let today = new Date().toISOString().split('T')[0];
+// document.getElementsByName("bookdate")[0].setAttribute('min', today);
+
 // Event Listeners
 window.onload = loadPage();
 searchButton.addEventListener('click', () => searchRooms())
