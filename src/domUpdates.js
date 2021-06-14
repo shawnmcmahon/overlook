@@ -98,6 +98,20 @@ const domUpdates = {
 
   displaySelectedCard() {
 
+  },
+
+  displayLogInSuccess() {
+    let dashboard = document.getElementById('dashboard');
+    let loginForm = document.getElementById('loginForm');
+    loginForm.classList.add('hidden');
+    dashboard.classList.remove('hidden');
+
+  },
+
+  displayLogInError() {
+    let displayError = document.getElementById('displayError');
+    displayError.classList.remove('hidden');
+
   }
 }
 

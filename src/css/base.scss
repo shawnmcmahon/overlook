@@ -275,7 +275,13 @@ section {
   height: 25px;
 }
 
+.hidden {
+  display: none!important;
+}
 
+.display-error {
+  color: red;
+}
 
 
 @media screen and (max-width: 1040px) {
@@ -538,6 +544,10 @@ section {
 .cost-value {
   padding-left: 3px;
   padding-top: 3px;
+}
+
+.display-error {
+  color: red;
 }
 
 }
