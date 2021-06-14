@@ -128,15 +128,15 @@ function bookRoom(bookingData, roomData, requestedRoom, customer) {
 
 function logIn(hotel) {
   event.preventDefault();
-  console.log('usernames', username.value)
+  // console.log('usernames', username.value)
   const userID = parseInt(username.value.split('r').pop());
-  console.log('userID', userID)
-  console.log('hotel', hotel.customers)
+  // console.log('userID', userID)
+  // console.log('hotel', hotel.customers)
   const foundCustomer = hotel.customers.customers.find(currentCustomer => {
-    console.log('currentCustomer:', currentCustomer.id)
+    // console.log('currentCustomer:', currentCustomer.id)
     return currentCustomer.id === userID
   });
-  console.log('foundCustomer:', foundCustomer)
+  // console.log('foundCustomer:', foundCustomer)
 
 
 
