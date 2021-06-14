@@ -33,7 +33,6 @@ class Hotel {
     const searchResults = this.availableRooms.filter(currentRoom =>
       currentRoom[1].roomType === searchData.roomType)
 
-
     this.roomSearchResults = searchResults;
 
     return this.roomSearchResults;

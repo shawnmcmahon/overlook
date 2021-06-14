@@ -37,7 +37,7 @@ function addNewBooking(bookingData, roomData, booking) {
 }
 
 const retrieveData = () => {
-  // console.log(Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()]))
+  console.log(Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()]))
   return Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()])
 }
 

@@ -50,8 +50,8 @@ let populatedCards;
 window.onload = loadPage();
 searchButton.addEventListener('click', () => searchRooms())
 // populatedCards.addEventListener('click', (e) => selectRoom(e))
-availableRoomsBackground.addEventListener('click', (e) => selectRoom(e, hotel))
-
+availableRoomsBackground.addEventListener('click', (e) => selectRoom(e, hotel, todaysDate))
+bookButton.addEventListener('click', () => bookRoom(bookingData, roomData, requestedRoom, customer));
 
 function loadPage(bookingData, roomData, customer) {
    apiCalls.retrieveData()
@@ -101,15 +101,15 @@ function searchRooms() {
   domUpdates.displaySearchResults(hotel, searchData);
 }
 
-function selectRoom(event, hotel) {
-  // console.log("event", event.target.closest("article").id)\
+function selectRoom(event, hotel, todaysDate) {
   const integerId = parseInt(event.target.closest('article').id)
-  console.log(integerId)
-  console.log(hotel)
+  // console.log(integerId)
+  // console.log(hotel)
   hotel.requestRoom(integerId)
-  // console.log(hotel)
-  // if (event.target.lastElementChild.innerText === roomNumber) {
-  //   console.log("click registered", card)
-  // }
-  // console.log(hotel)
+}
+
+function bookRoom(bookingData, roomData, requestedRoom, customer) {
+  console.log('le customer?', customer)
+  customer.reserveRoom(hotel.requestedRoom, bookingData, roomData)
+  // apiCalls.addNewBooking(bookingData, roomData, hotel.requestedRoom)
 }

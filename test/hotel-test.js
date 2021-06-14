@@ -95,7 +95,7 @@ beforeEach(() => {
     });
 
     it('should have a method that filters available rooms by search', () => {
-      const searchProperties = {'roomType': 'single room', 'bedsize': 'king', 'numBeds': 1}
+      const searchProperties = {'roomType': 'single room'}
       hotel.findAvailableRooms("2020/04/22");
       const results = hotel.filterSearchResults(searchProperties);
       expect(hotel.roomSearchResults).to.eql([[

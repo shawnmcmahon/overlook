@@ -51,7 +51,7 @@ const domUpdates = {
           <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">${currentRoom[0]}</p>
           <p class="reservation-label">Reservation Date</p>
         <section class="cost-label">
-          <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$   ${currentRoom[1].costPerNight} Per Night</p>
+          <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$ ${currentRoom[1].costPerNight} Per Night</p>
         </section>
           <p class="detail-label">Room Type</p>
           <p class="detail-value" id="roomType">${currentRoom[1].roomType}</p>

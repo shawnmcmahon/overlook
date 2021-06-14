@@ -46,6 +46,16 @@ class Customer {
 
   }
 
+  reserveRoom(bookingData, roomData, requestedRoom) {
+    let booking = {
+      'userID': this.id,
+      'date': requestedRoom[0],
+      'roomNumber': requestedRoom[1].number,
+      'roomServiceCharges': []
+    }
+    domUpdates.addNewBooking(bookingData, roomData, booking)
+  }
+
 
 }
 
