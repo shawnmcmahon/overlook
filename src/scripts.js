@@ -144,6 +144,8 @@ function logIn(hotel) {
     domUpdates.displayLogInSuccess()
   } else {
     //unhide the display-error p tag
+    console.log('did we fail?')
+    domUpdates.displayLogInError()
   }
 
 

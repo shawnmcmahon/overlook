@@ -106,7 +106,11 @@ const domUpdates = {
     loginForm.classList.add('hidden');
     dashboard.classList.remove('hidden');
 
+  },
 
+  displayLogInError() {
+    let displayError = document.getElementById('displayError');
+    displayError.classList.remove('hidden');
 
   }
 }
