@@ -42,6 +42,12 @@ let roomNumberOfBeds = document.getElementById('roomNumberOfBeds');
 let roomBidet = document.getElementById('roomBidet');
 let card = document.getElementById('card');
 
+//Login selectors
+let loginForm = document.getElementById('loginForm');
+let loginButton = document.getElementById('loginButton');
+let username = document.getElementById('username')
+let password = document.getElementById('password')
+
 // Variables
 let bookingData, roomData, customerData, customer, hotel;
 let todaysDate ='2020/06/19';
@@ -56,6 +62,8 @@ searchButton.addEventListener('click', () => searchRooms())
 // populatedCards.addEventListener('click', (e) => selectRoom(e))
 availableRoomsBackground.addEventListener('click', (e) => selectRoom(e, hotel, todaysDate))
 bookButton.addEventListener('click', () => bookRoom(bookingData, roomData, requestedRoom, customer));
+loginButton.addEventListener('click', () => logIn(hotel))
+
 
 function loadPage(bookingData, roomData, customer) {
    apiCalls.retrieveData()
@@ -116,4 +124,20 @@ function bookRoom(bookingData, roomData, requestedRoom, customer) {
   console.log('le customer?', customer)
   customer.reserveRoom(hotel.requestedRoom, bookingData, roomData)
   // apiCalls.addNewBooking(bookingData, roomData, hotel.requestedRoom)
+}
+
+function logIn(hotel) {
+  event.preventDefault();
+  console.log('usernames', username.value)
+  const userID = parseInt(username.value.split('r').pop());
+  console.log('userID', userID)
+  console.log('hotel', hotel.customers)
+  const foundCustomer = hotel.customers.customers.find(currentCustomer => {
+    console.log('currentCustomer:', currentCustomer.id)
+    return currentCustomer.id === userID
+  });
+  console.log('foundCustomer:', foundCustomer)
+
+
+
 }
