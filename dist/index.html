@@ -19,14 +19,14 @@
         <p class="display-error hidden" id="displayError">Username and/or Password are incorrect</p>
       </form>
       <header>
-        <nav>
+        <nav class="hidden">
           <h1 class="reservation-history-label">OVERLOOK HOTEL</button>
           <p class="reservation-date" id="welcome">Hello</p>
           <p class="reservation-date" id="expenseHistory">Total Spent:</p>
           <p class="reservation-date" id="date">06/12/2020</p>
         </nav>
       </header>
-      <section class="room-search-form">
+      <section class="room-search-form hidden">
         <div class="input date">
          <label for="bookDate">Date: </label>
          <input type="date" id="bookDate" name="bookDate" value="2020-06-13" min="2020-06-13" max="2022-06-13"/>
@@ -46,10 +46,10 @@
               <button type="button" class="" id="bookRoom">Book</button>
         </div>
       </section>
-      <div class="label-container">
+      <div class="label-container hidden">
         <p class="reservation-history-label">Available Rooms</p>
       </div>
-      <section class="reservation-background" id="availableRoomsBackground">
+      <section class="reservation-background hidden" id="availableRoomsBackground">
         <article class="card" id="card" tabindex="0">
           <section class="card-header">
               <p class="room-label">Room Number</p>
@@ -85,10 +85,10 @@
             <p class="detail-value" id="roomBidet">Yes</p>
         </article>
       </section>
-      <div class="label-container">
+      <div class="label-container hidden">
         <p class="reservation-history-label">Your Reservation History</p>
       </div>
-      <section class="reservation-background" id="reservationHistoryBackground">
+      <section class="reservation-background hidden" id="reservationHistoryBackground">
         <article class="card" id="card">
           <section class="card-header">
               <p class="room-label">Room Number</p>
