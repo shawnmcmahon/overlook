@@ -10,20 +10,20 @@
 <body>
   <body>
     <main
-      <form class="login-form" id="loginForm">
-        <label for="username">Username</label>
-        <input text="text" placeholder="Username here" name='username' id="username" required />
-        <label for="password">Password</label>
-        <input text="text" placeholder="********" name='password' id="password" required />
-        <button type="login" class="" id="login">
-        <p class="display-error hidden" id="displayError">Username and/or Password are incorrect</p>
-      </form>
       <header>
-        <nav class="hidden">
-          <h1 class="reservation-history-label">OVERLOOK HOTEL</button>
-          <p class="reservation-date" id="welcome">Hello</p>
-          <p class="reservation-date" id="expenseHistory">Total Spent:</p>
-          <p class="reservation-date" id="date">06/12/2020</p>
+        <nav>
+          <form class="login-form" id="loginForm">
+            <h1 class="reservation-history-label">OVERLOOK HOTEL</button>
+            <label for="username">Username</label>
+            <input text="text" placeholder="Username here" name='username' id="username" required />
+            <label for="password">Password</label>
+            <input text="text" placeholder="********" name='password' id="password" required />
+            <button type="login" class="" id="login">
+              <p class="display-error hidden" id="displayError">Username and/or Password are incorrect</p>
+            </form>
+          <p class="reservation-date hidden" id="welcome">Hello</p>
+          <p class="reservation-date hidden" id="expenseHistory">Total Spent:</p>
+          <p class="reservation-date hidden" id="date">06/12/2020</p>
         </nav>
       </header>
       <section class="room-search-form hidden">
