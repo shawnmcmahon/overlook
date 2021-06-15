@@ -1,0 +1,276 @@
+html,
+body
+main {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  overflow: scroll;
+  width: 100%;
+}
+
+article {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+header {
+  align-self: center;
+  align-items: center;
+  background-color: #DD6B6B;
+  border: none;
+  display: flex;
+  height: 175px;
+  margin-right: 10px;
+  outline: none;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  height: 175px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+
+section {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  outline: none;
+}
+
+.room-search-form {
+  height: 200px;
+  width: 100%;
+  background-color: gray;
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.reservation-date {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: black;
+}
+
+.reservation-label {
+  font-size: 10px;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  color: black;
+}
+
+.detail-label {
+  font-size: 12px;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  color: black;
+}
+
+
+.detail-value {
+  font-size: 16px;
+  margin-top: 0px;
+  padding-left: 10px;
+  color: black;
+}
+
+.room-label,
+.room-value {
+  align-self: flex-end;
+  color: black;
+  flex-direction: column;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  color: black;
+  /* margin-top: 20px; */
+}
+
+.room-value {
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.reservation-background {
+  align-items: flex-start;
+  background-color: white;
+  color: grey;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.card {
+  align-self: center;
+  background-color: #F2F2F3;
+  color: grey;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px gray);
+  margin: 5px;
+  width: 250px;
+}
+
+.card:hover {
+  align-self: center;
+  background-color: #F2F2F3;
+  color: grey;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px gray);
+  margin: 5px;
+  opacity: 0.4;
+  width: 250px;
+}
+
+.card-header {
+  align-self: flex-start;
+  border-color: red;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 250px;
+  filter: brightness(70%);
+}
+
+.cost-label {
+  align-self: center;
+  background-color: white;
+  color: grey;
+  font-size: 12px;
+  height: 40px;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 225px;
+}
+
+.label-container {
+  height: 75px;
+  width: auto;
+
+}
+
+.nav-right {
+  align-self: flex-start;
+  background-color: inherit;
+  height: 40px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-text {
+  align-self: flex-end;
+  background-color: inherit;
+  color: white;
+  font-size: 12px;
+  margin: 5px;
+  padding-bottom: 10px;
+  width: 100px;
+  margin-left: 0px;
+}
+
+.nav-text-all-time {
+  align-self: flex-end;
+  color: black;
+  background-color: inherit;
+  font-size: 12px;
+  margin: 5px;
+  padding-bottom: 10px;
+  width: 100px;
+  text-align: left;
+  margin-left: 0px;
+}
+
+.reservation-history-label {
+  color: gray;
+  flex-direction: column;
+  font-size: 36px;
+  padding-top: 20px;
+  color: black;
+
+}
+
+.menu-button {
+  height: 40px;
+  width: 40px;
+  align-self: flex-end;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+
+.user-menu {
+  align-self: flex-start;
+  background-color: inherit;
+  color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 12px;
+  height: 30px;
+  margin: 5px;
+  width: auto;
+}
+
+.account-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.cost-value {
+  padding-left: 3px;
+  padding-top: 3px;
+  color: black;
+}
+
+.arrow {
+  margin: 0px;
+  width: 25px;
+  height: 25px;
+}
+
+.hidden {
+  display: none!important;
+}
+
+.display-error {
+  color: red;
+}

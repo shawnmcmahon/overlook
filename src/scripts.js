@@ -1,8 +1,8 @@
-import './css/base.scss';
-// import './css/_desktop.scss'
-// import './css/_mobile.scss'
+// import './css/base.scss';
+import './css/_desktop.scss'
+import './css/_tablet.scss'
+import './css/_mobile.scss'
 // import './css/_normalize.scss'
-// import './css/_tablet.scss'
 
 import Customer from './customer';
 import Hotel from './hotel';
@@ -48,7 +48,7 @@ let password = document.getElementById('password')
 let bookingData, roomData, customerData, customer, hotel, userID;
 let todaysDate ='2020/06/19';
 let populatedCards;
-var customerID;
+let customerID;
 
 
 // Event Listeners
@@ -58,7 +58,7 @@ searchButton.addEventListener('click', () => searchRooms())
 // populatedCards.addEventListener('click', (e) => selectRoom(e))
 availableRoomsBackground.addEventListener('click', (e) => selectRoom(e, hotel, todaysDate))
 bookButton.addEventListener('click', () => bookRoom(customer, hotel));
-loginButton.addEventListener('click', () => logIn(hotel))
+// loginButton.addEventListener('click', () => logIn(hotel))
 
 
 
