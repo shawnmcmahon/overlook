@@ -62,7 +62,7 @@ searchButton.addEventListener('click', () => searchRooms())
 // populatedCards.addEventListener('click', (e) => selectRoom(e))
 availableRoomsBackground.addEventListener('click', (e) => selectRoom(e, hotel, todaysDate))
 bookButton.addEventListener('click', () => bookRoom(bookingData, roomData, requestedRoom, customer));
-loginButton.addEventListener('click', () => logIn(hotel))
+// loginButton.addEventListener('click', () => logIn(hotel))
 
 
 function loadPage(bookingData, roomData, customer) {

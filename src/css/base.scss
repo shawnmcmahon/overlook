@@ -97,37 +97,33 @@ section {
   margin-top: 0px;
   padding-bottom: 15px;
   padding-left: 10px;
+  color: black;
 }
 
-.detail-label,
-.artist-100 {
+.detail-label {
   font-size: 12px;
   padding-left: 10px;
   padding-top: 10px;
   margin-bottom: 0px;
+  color: black;
 }
 
-.artist-100-count{
-  color: #6BDDDD;
-  font-size: 24px;
-  margin-top: 0px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-}
 
 .detail-value {
   font-size: 16px;
   margin-top: 0px;
   padding-left: 10px;
+  color: black;
 }
 
 .room-label,
 .room-value {
   align-self: flex-end;
-  color: white;
+  color: black;
   flex-direction: column;
   margin-bottom: 0px;
   margin-right: 10px;
+  color: black;
   /* margin-top: 20px; */
 }
 
@@ -135,6 +131,7 @@ section {
   font-size: 30px;
   margin-top: 0px;
   margin-bottom: 30px;
+  color: black;
 }
 
 .reservation-background {
@@ -267,6 +264,7 @@ section {
 .cost-value {
   padding-left: 3px;
   padding-top: 3px;
+  color: black;
 }
 
 .arrow {
@@ -373,34 +371,29 @@ section {
   margin-top: 0px;
   padding-bottom: 15px;
   padding-left: 10px;
+  color: black;
 }
 
-.detail-label,
-.artist-100 {
+.detail-label {
   font-size: 12px;
   margin-bottom: 0px;
   padding-left: 10px;
   padding-top: 10px;
+  color: 100px;
 }
 
-.artist-100-count {
-  color: #6BDDDD;
-  font-size: 24px;
-  margin-top: 0px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-}
 
 .detail-value {
   font-size: 16px;
   margin-top: 0px;
   padding-left: 10px;
+  color: black;
 }
 
 .room-label,
 .room-value {
   align-self: flex-end;
-  color: white;
+  color: black;
   flex-direction: column;
   margin-bottom: 0px;
   margin-right: 10px;
@@ -544,6 +537,7 @@ section {
 .cost-value {
   padding-left: 3px;
   padding-top: 3px;
+  color: black;
 }
 
 .display-error {
