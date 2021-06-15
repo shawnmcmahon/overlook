@@ -72,12 +72,6 @@ section {
   width: 100%;
 }
 
-.logo-image {
-  height: 200px;
-  margin-right: 20px;
-  margin-top: 20px;
-  width: 200px;
-}
 
 .reservation-date {
   color: black;
@@ -184,51 +178,11 @@ section {
 
 }
 
-.nav-right {
-  align-self: flex-start;
-  background-color: inherit;
-  display: flex;
-  flex-direction: column;
-  height: 40px;
-  width: 250px;
-}
-
-.nav-text {
-  align-self: flex-end;
-  background-color: inherit;
-  color: white;
-  font-size: 12px;
-  margin: 5px;
-  margin-left: 0px;
-  padding-bottom: 10px;
-  width: 100px;
-}
-
-.nav-text-all-time {
-  align-self: flex-end;
-  color: black;
-  background-color: inherit;
-  font-size: 12px;
-  margin: 5px;
-  margin-left: 0px;
-  padding-bottom: 10px;
-  text-align: left;
-  width: 100px;
-}
-
 .reservation-history-label {
   color: black;
   flex-direction: column;
   font-size: 36px;
   padding-top: 20px;
-}
-
-.menu-button {
-  align-self: flex-end;
-  height: 40px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  width: 40px;
 }
 
 
