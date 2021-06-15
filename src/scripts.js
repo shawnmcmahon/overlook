@@ -49,8 +49,6 @@ let bookingData, roomData, customerData, customer, hotel, userID;
 let todaysDate ='2020/06/19';
 let populatedCards;
 
-// let today = new Date().toISOString().split('T')[0];
-// document.getElementsByName("bookdate")[0].setAttribute('min', today);
 
 // Event Listeners
 window.onload = loadPage();
@@ -69,7 +67,6 @@ function loadPage(bookingData, roomData) {
       bookingData = promise[2];
       hotel = new Hotel(roomData, bookingData, customerData)
       customer = new Customer(customerData.customers[0])
-      console.log('the customer needed:', customer)
       retrieveDate();
       retrieveCustomerData(bookingData, roomData, customer);
       domUpdates.displayHeaderInfo(customer, todaysDate)
@@ -103,20 +100,12 @@ function searchRooms() {
 function selectRoom(event, hotel, todaysDate) {
   const integerId = parseInt(event.target.closest('article').id)
   hotel.requestRoom(integerId)
-  console.log("hotel selected", hotel.requestedRoom)
 }
 
 const bookRoom = (customer, hotel) => {
-  console.log('le customer', customer.id)
-  console.log('le hotel', hotel)
-  console.log("hotel selected in bookRoom", hotel.requestedRoom)
-  // customer.reserveRoom(hotel.requestedRoom, bookingData, roomData)
   let date = bookDate.value.split("-").join('/');
-  console.log('requested date', date)
   let roomNumber = hotel.requestedRoom[1].number;
-  console.log('roomNumber', roomNumber)
-  let customerID = customer.id
-  // let bookData = {customerID, date, roomNumber}
+  let customerID = customer.id;
 
   apiCalls.addNewBooking(customerID, date, roomNumber)
   domUpdates.displayAvailableRooms(hotel, todaysDate)
