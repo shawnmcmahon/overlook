@@ -1,5 +1,5 @@
 //Mobile View
-@import 'variables'; 
+@import 'variables';
 @media screen and (max-width: 550px) {
 
 html,
@@ -19,7 +19,7 @@ article {
   // display: flex;
   // flex-direction: column;
   justify-content: center;
-  // @include flex-column()
+  @include flex-column()
 
 }
 

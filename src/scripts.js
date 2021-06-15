@@ -59,7 +59,7 @@ searchButton.addEventListener('click', () => searchRooms())
 // populatedCards.addEventListener('click', (e) => selectRoom(e))
 availableRoomsBackground.addEventListener('click', (e) => selectRoom(e, hotel, todaysDate))
 bookButton.addEventListener('click', () => bookRoom(customer, hotel));
-// loginButton.addEventListener('click', () => logIn(hotel))
+loginButton.addEventListener('click', () => logIn(hotel))
 
 
 
@@ -138,7 +138,7 @@ const bookRoom = (customer, hotel) => {
 }
 
 function logIn(hotel) {
-  // event.preventDefault();
+  event.preventDefault();
   const userID = parseInt(username.value.split('r').pop());
   const foundCustomer = hotel.customers.customers.find(currentCustomer => {
     return currentCustomer.id === userID
