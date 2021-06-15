@@ -8,7 +8,6 @@ class Customer {
   }
 
   findBookingHistory(bookingData) {
-    //console.log('booking data?', bookingData)
     this.bookingHistory = bookingData.bookings.filter(booking => booking.userID === this.id).sort().reverse();
     return this.bookingHistory;
   }
@@ -22,7 +21,6 @@ class Customer {
     });
 
     this.roomHistory = roomHistoryWithDates.sort().reverse()
-    // console.log(this.roomHistory)
     return this.roomHistory;
   }
 

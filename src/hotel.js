@@ -40,7 +40,6 @@ class Hotel {
   }
 
   requestRoom(roomNumber) {
-    // console.log('room number in hotel', roomNumber)
     this.requestedRoom = this.availableRooms.find(currentRoom => {
       return currentRoom[1].number === roomNumber
     });

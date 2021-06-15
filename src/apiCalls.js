@@ -17,7 +17,6 @@ const fetchBookingData = () => {
 }
 
 const checkForError = (response) => {
-  // console.log(response)
   if (!response.ok) {
     throw new Error('Something went wrong, please try again,')
   } else {
@@ -25,11 +24,15 @@ const checkForError = (response) => {
   }
 }
 
-function addNewBooking(bookingData, roomData, booking) {
+function addNewBooking(customerID, date, roomNumber) {
   return fetch('http://localhost:3001/api/v1/bookings', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(booking)
+      body: JSON.stringify({
+        id: customerID,
+        date: date,
+        roomNumber: roomNumber
+      })
     })
     .then(response => checkForError(response))
     .catch(error => console.error(`POST Request Error: ${error.message}`))
@@ -37,7 +40,6 @@ function addNewBooking(bookingData, roomData, booking) {
 }
 
 const retrieveData = () => {
-  // console.log(Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()]))
   return Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()])
 }
 
