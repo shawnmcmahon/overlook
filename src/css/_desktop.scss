@@ -11,6 +11,7 @@ main {
 }
 
 article {
+  // @include flex-column();
   border: none;
   display: flex;
   flex-direction: column;
@@ -47,12 +48,16 @@ p {
   display: flex;
   flex-direction: column;
   margin: 3px;
+  // @include flex-column();
+
 }
 
 h1 {
   display: flex;
   flex-direction: column;
   margin: 3px;
+  // @include flex-column();
+
 }
 
 section {

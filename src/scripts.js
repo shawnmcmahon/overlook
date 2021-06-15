@@ -1,8 +1,9 @@
 // import './css/base.scss';
+// import './css/_normalize.scss'
+import './css/_variables.scss'
 import './css/_desktop.scss'
 import './css/_tablet.scss'
 import './css/_mobile.scss'
-// import './css/_normalize.scss'
 
 import Customer from './customer';
 import Hotel from './hotel';
