@@ -1,3 +1,4 @@
+@import 'variables';
 html,
 body
 main {
@@ -11,7 +12,7 @@ main {
 }
 
 article {
-  // @include flex-column();
+  @include flex-column();
   border: none;
   display: flex;
   flex-direction: column;

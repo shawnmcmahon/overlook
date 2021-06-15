@@ -1,5 +1,5 @@
-// import './css/base.scss';
-// import './css/_normalize.scss'
+// import './css/base.scss'
+import './css/_normalize.scss'
 import './css/_variables.scss'
 import './css/_desktop.scss'
 import './css/_tablet.scss'

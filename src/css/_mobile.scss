@@ -1,4 +1,5 @@
 //Mobile View
+@import 'variables'; 
 @media screen and (max-width: 550px) {
 
 html,
@@ -186,7 +187,7 @@ section {
 
 
 .reservation-history-label {
-  color: black;
+  color: $text-color;
   font-size: 22px;
   padding-top: 20px;
 }
