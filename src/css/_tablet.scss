@@ -59,52 +59,52 @@ section {
 }
 
 .room-search-form {
-  height: 200px;
-  width: 100%;
-  background-color: gray;
+  align-items: center;
   align-self: center;
   display: flex;
-  align-items: center;
+  background-color: gray;
+  height: 200px;
+  width: 100%;
 
 }
 
 .logo-image {
-  width: 100px;
   height: 100px;
-  margin-top: 40px;
   margin-left: 30px;
+  margin-top: 40px;
+  width: 100px;
 }
 
 
 .reservation-date {
+  color: black;
   font-size: 16px;
   padding-left: 10px;
   padding-top: 10px;
-  color: black;
 }
 
 .reservation-label {
+  color: black;
   font-size: 10px;
   margin-top: 0px;
   padding-bottom: 15px;
   padding-left: 10px;
-  color: black;
 }
 
 .detail-label {
+  color: 100px;
   font-size: 12px;
   margin-bottom: 0px;
   padding-left: 10px;
   padding-top: 10px;
-  color: 100px;
 }
 
 
 .detail-value {
+  color: black;
   font-size: 16px;
   margin-top: 0px;
   padding-left: 10px;
-  color: black;
 }
 
 .room-label,
@@ -114,20 +114,18 @@ section {
   flex-direction: column;
   margin-bottom: 0px;
   margin-right: 10px;
-  /* margin-top: 20px; */
 }
 
 .room-value {
   font-size: 30px;
-  margin-top: 0px;
   margin-bottom: 30px;
+  margin-top: 0px;
 }
 
 .reservation-background {
   align-items: flex-start;
   background-color: white;
   color: grey;
-  // flex-direction: row;
   flex-wrap: wrap;
   height: 400px;
   width: 100%;
@@ -155,15 +153,6 @@ section {
   width: 250px;
 }
 
-// .card-selected {
-//   align-self: center;
-//   background-color: red;
-//   color: black;
-//   display: flex;
-//   filter: drop-shadow(1px 1px 1px gray);
-//   margin: 5px;
-//   width: 250px;
-// }
 
 .card:hover {
   align-self: center;
@@ -196,14 +185,6 @@ section {
   width: 225px;
 }
 
-.nav-right {
-  align-self: flex-start;
-  background-color: inherit;
-  display: flex;
-  flex-direction: column;
-  height: 40px;
-  width: 250px;
-}
 
 .nav-text {
   align-self: flex-end;
@@ -226,35 +207,23 @@ section {
 }
 
 .reservation-history-label {
-  color: gray;
+  color: black;
   font-size: 22px;
   padding-top: 20px;
-  color: black;
 }
 
 .menu-button {
-  height: 0px;
-  width: 0px;
   align-self: flex-end;
+  height: 0px;
   padding-bottom: 20px;
-}
-
-.user-menu {
-  background-color: inherit;
-  color: white;
-  flex-direction: column;
-  flex-wrap: wrap;
-  font-size: 12px;
-  height: 30px;
-  margin: 5px;
-  width: auto;
+  width: 0px;
 }
 
 
 .cost-value {
+  color: black;
   padding-left: 3px;
   padding-top: 3px;
-  color: black;
 }
 
 .display-error {
