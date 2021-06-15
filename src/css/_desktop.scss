@@ -2,10 +2,10 @@ html,
 body
 main {
   display: flex;
-  flex-direction: column;
-  font-family: 'Dela Gothic One', cursive;
-  font-family: 'Lato', sans-serif;
   height: 100%;
+  flex-direction: column;
+  // font-family: 'Dela Gothic One', cursive;
+  font-family: 'Lato', sans-serif;
   overflow: scroll;
   width: 100%;
 }
@@ -36,11 +36,11 @@ header {
 }
 
 nav {
+  align-items: center;
   display: flex;
   height: 175px;
-  width: 100%;
   justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 p {
@@ -64,50 +64,50 @@ section {
 }
 
 .room-search-form {
+  align-items: center;
+  align-self: center;
+  background-color: gray;
+  display: flex;
   height: 200px;
   width: 100%;
-  background-color: gray;
-  align-self: center;
-  display: flex;
-  align-items: center;
 }
 
 .logo-image {
-  width: 200px;
   height: 200px;
-  margin-top: 20px;
   margin-right: 20px;
+  margin-top: 20px;
+  width: 200px;
 }
 
 .reservation-date {
+  color: black;
   font-size: 16px;
   padding-left: 10px;
   padding-top: 10px;
-  color: black;
 }
 
 .reservation-label {
+  color: black;
   font-size: 10px;
   margin-top: 0px;
   padding-bottom: 15px;
   padding-left: 10px;
-  color: black;
 }
 
 .detail-label {
+  color: black;
   font-size: 12px;
   padding-left: 10px;
   padding-top: 10px;
   margin-bottom: 0px;
-  color: black;
 }
 
 
 .detail-value {
+  color: black;
   font-size: 16px;
   margin-top: 0px;
   padding-left: 10px;
-  color: black;
 }
 
 .room-label,
@@ -117,26 +117,23 @@ section {
   flex-direction: column;
   margin-bottom: 0px;
   margin-right: 10px;
-  color: black;
-  /* margin-top: 20px; */
 }
 
 .room-value {
-  font-size: 30px;
-  margin-top: 0px;
-  margin-bottom: 30px;
   color: black;
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-top: 0px;
 }
 
 .reservation-background {
   align-items: flex-start;
   background-color: white;
   color: grey;
-  // flex-direction: row;
   flex-wrap: wrap;
   height: 400px;
-  width: 100%;
   overflow-x: scroll;
+  width: 100%;
 }
 
 .card {
@@ -190,10 +187,10 @@ section {
 .nav-right {
   align-self: flex-start;
   background-color: inherit;
-  height: 40px;
-  width: 250px;
   display: flex;
   flex-direction: column;
+  height: 40px;
+  width: 250px;
 }
 
 .nav-text {
@@ -202,9 +199,9 @@ section {
   color: white;
   font-size: 12px;
   margin: 5px;
+  margin-left: 0px;
   padding-bottom: 10px;
   width: 100px;
-  margin-left: 0px;
 }
 
 .nav-text-all-time {
@@ -213,27 +210,25 @@ section {
   background-color: inherit;
   font-size: 12px;
   margin: 5px;
-  padding-bottom: 10px;
-  width: 100px;
-  text-align: left;
   margin-left: 0px;
+  padding-bottom: 10px;
+  text-align: left;
+  width: 100px;
 }
 
 .reservation-history-label {
-  color: gray;
+  color: black;
   flex-direction: column;
   font-size: 36px;
   padding-top: 20px;
-  color: black;
-
 }
 
 .menu-button {
-  height: 40px;
-  width: 40px;
   align-self: flex-end;
+  height: 40px;
   padding-bottom: 20px;
   padding-left: 20px;
+  width: 40px;
 }
 
 
@@ -250,21 +245,21 @@ section {
 }
 
 .account-icon {
-  width: 20px;
   height: 20px;
   margin-right: 10px;
+  width: 20px;
 }
 
 .cost-value {
+  color: black;
   padding-left: 3px;
   padding-top: 3px;
-  color: black;
 }
 
 .arrow {
+  height: 25px;
   margin: 0px;
   width: 25px;
-  height: 25px;
 }
 
 .hidden {
