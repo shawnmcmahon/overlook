@@ -14,7 +14,6 @@ const domUpdates = {
   displayCustomerInfo(customerData) {
     reservationHistoryBackground.innerHTML = ' ';
     customerData.forEach(currentBooking => {
-      //console.log("currentBooking:", currentBooking)
       reservationHistoryBackground.innerHTML += `
       <article class="card" id="card">
         <section class="card-header">
@@ -39,9 +38,7 @@ const domUpdates = {
   displayAvailableRooms(hotel, todaysDate) {
     availableRoomsBackground.innerHTML = ' ';
     hotel.findAvailableRooms(todaysDate);
-    // console.log('hotel:', hotel)
     hotel.availableRooms.forEach(currentRoom => {
-      // console.log('currentRoom:', currentRoom)
       availableRoomsBackground.innerHTML += `
       <article class="card" id="${currentRoom[1].number}">
         <section class="card-header">
@@ -51,7 +48,7 @@ const domUpdates = {
           <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">${currentRoom[0]}</p>
           <p class="reservation-label">Reservation Date</p>
         <section class="cost-label">
-          <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$ ${currentRoom[1].costPerNight} Per Night</p>
+          <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$${currentRoom[1].costPerNight} Per Night</p>
         </section>
           <p class="detail-label">Room Type</p>
           <p class="detail-value" id="roomType" aria-label="Room Type">${currentRoom[1].roomType}</p>
@@ -65,14 +62,11 @@ const domUpdates = {
   },
 
   displaySearchResults(hotel, searchData) {
-    console.log("searchData.date", searchData)
-    hotel.findAvailableRooms(searchData.date)
-
-    hotel.filterSearchResults(searchData)
-    console.log('hotel', hotel)
+    hotel.findAvailableRooms(searchData.date);
+    hotel.filterSearchResults(searchData);
     availableRoomsBackground.innerHTML = ' ';
     hotel.roomSearchResults.forEach(currentRoom => {
-      console.log('currentRoom:', currentRoom)
+      console.log('currentRoom', currentRoom[0])
       availableRoomsBackground.innerHTML += `
       <article class="card" id="${currentRoom[1].number}" dataset-id="${currentRoom[1].number}">
         <section class="card-header" id="${currentRoom[1].number}card-header">
@@ -82,7 +76,7 @@ const domUpdates = {
           <p class="reservation-date" id="roomReservationDate" aria-label="Reservation Date">${currentRoom[0]}</p>
           <p class="reservation-label">Reservation Date</p>
         <section class="cost-label">
-          <p class="cost-value" id="roomCost" aria-label="Cost Per Night">${currentRoom[1].costPerNight} Per Night</p>
+          <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$${currentRoom[1].costPerNight} Per Night</p>
         </section>
           <p class="detail-label">Room Type</p>
           <p class="detail-value" id="roomType" aria-label="Room Type">${currentRoom[1].roomType}</p>
