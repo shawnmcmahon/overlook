@@ -119,6 +119,11 @@ const bookRoom = (customer, hotel) => {
   // let bookData = {customerID, date, roomNumber}
 
   apiCalls.addNewBooking(customerID, date, roomNumber)
+  domUpdates.displayAvailableRooms(hotel, todaysDate)
+  customer.findBookingHistory(bookingData);
+  customer.bookingHistory.sort().reverse()
+  domUpdates.displayCustomerInfo(customer.roomHistory);
+
 }
 
 function logIn(hotel) {
