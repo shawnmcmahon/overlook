@@ -48,40 +48,61 @@ let password = document.getElementById('password')
 let bookingData, roomData, customerData, customer, hotel, userID;
 let todaysDate ='2020/06/19';
 let populatedCards;
+var customerID;
 
 
 // Event Listeners
-window.onload = loadPage();
+// window.onload = loadPage();
+window.onload = loadLoginPage();
 searchButton.addEventListener('click', () => searchRooms())
 // populatedCards.addEventListener('click', (e) => selectRoom(e))
 availableRoomsBackground.addEventListener('click', (e) => selectRoom(e, hotel, todaysDate))
 bookButton.addEventListener('click', () => bookRoom(customer, hotel));
-// loginButton.addEventListener('click', () => logIn(hotel))
+loginButton.addEventListener('click', () => logIn(hotel))
 
 
-function loadPage(bookingData, roomData) {
+
+
+function loadLoginPage() {
    apiCalls.retrieveData()
     .then((promise) => {
       customerData = promise[0];
       roomData = promise[1];
       bookingData = promise[2];
       hotel = new Hotel(roomData, bookingData, customerData)
-      customer = new Customer(customerData.customers[0])
+
+      // console.log('userID', userID)
+    })
+
+
+}
+
+function loadPage(bookingData, roomData, userID) {
+   apiCalls.retrieveData()
+    .then((promise) => {
+      console.log("userID in promise", customerID)
+      customerData = promise[0];
+      roomData = promise[1];
+      bookingData = promise[2];
+      hotel = new Hotel(roomData, bookingData, customerData)
+      customer = new Customer(customerData.customers[customerID - 1])
+      console.log('customer right after is is made:', customer)
       retrieveDate();
       retrieveCustomerData(bookingData, roomData, customer);
       domUpdates.displayHeaderInfo(customer, todaysDate)
       domUpdates.displayCustomerInfo(customer.roomHistory);
       domUpdates.displayAvailableRooms(hotel, todaysDate)
+      // console.log('userID', userID)
     })
 
 
 }
 
 function retrieveCustomerData(bookingData, roomData, customer) {
+  console.log('current customer:', customer)
   customer.findBookingHistory(bookingData);
   customer.findRoomHistoryWithDate(bookingData, roomData)
   customer.findExpenseTotal(bookingData, roomData);
-
 }
 
 function retrieveDate() {
@@ -116,16 +137,21 @@ const bookRoom = (customer, hotel) => {
 }
 
 function logIn(hotel) {
-  event.preventDefault();
+  // event.preventDefault();
   const userID = parseInt(username.value.split('r').pop());
   const foundCustomer = hotel.customers.customers.find(currentCustomer => {
     return currentCustomer.id === userID
   });
   if (foundCustomer && password.value === 'overlook2021') {
+    loadPage()
     domUpdates.displayLogInSuccess()
   } else {
     domUpdates.displayLogInError()
   }
+  console.log('userID in logIN function', userID)
+  customerID = userID;
+  console.log('customerID in logIN function', customerID)
+
 
 
 }
