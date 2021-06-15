@@ -10,8 +10,8 @@
 <body>
   <body>
     <main>
-      <!-- <section class="" id="loginForm">
-        <form class="login-form">
+      <section class="" id="loginForm">
+        <!-- <form class="login-form">
           <h1 class="reservation-history-label">OVERLOOK HOTEL</button>
             <label for="username">Username</label>
             <input text="text" placeholder="Username here" name='username' id="username" required />
@@ -19,8 +19,8 @@
             <label for="password">Password</label>
             <input text="text" placeholder="********" name='password' id="password" required />
             <p class="display-error hidden" id="displayError">Username and/or Password are incorrect</p>
-        </form>
-      </section> -->
+        </form> -->
+      </section>
       <section class="dashboard" id="dashboard">
         <header>
           <nav>
@@ -31,11 +31,12 @@
           </nav>
         </header>
         <section class="room-search-form" id="roomSearchForm">
-          <form class="bookDate" name="bookDate" id="bookDate">
+          <!-- <form id="bookDate" name="bookDate"> -->
           <div class="input date">
            <label for="bookDate">Date: </label>
-           <input type="date" id="bookDate" name="bookDate" value="2020-06-13" min="2020-06-13" max="2022-06-13"/>
-           <!-- <input type="date" class="" id="bookDate" name="bookDate" value="" required> -->
+           <input type="date" class="bookDate" id="bookDate" name="bookDate" value="2020-06-19" min="2020-06-19" max="2022-06-19">
+          </div>
+          <!-- </form> -->
          <div class="room-features">
             <div class="input room-type">
               <label for="roomType">Room Type: </label>
@@ -46,7 +47,6 @@
                 <option value="residential suite">Residential Suite</option>
               </select>
             </div>
-          </form>
                 <button type="button" class="" id="searchRooms">Search</button>
                 <button type="button" class="" id="bookRoom">Book</button>
           </div>

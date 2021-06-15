@@ -1,7 +1,3 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
 // import './css/_desktop.scss'
 // import './css/_mobile.scss'
@@ -49,7 +45,7 @@ let username = document.getElementById('username')
 let password = document.getElementById('password')
 
 // Variables
-let bookingData, roomData, customerData, customer, hotel;
+let bookingData, roomData, customerData, customer, hotel, userID;
 let todaysDate ='2020/06/19';
 let populatedCards;
 
@@ -65,7 +61,7 @@ bookButton.addEventListener('click', () => bookRoom(customer, hotel));
 // loginButton.addEventListener('click', () => logIn(hotel))
 
 
-function loadPage(bookingData, roomData, customer) {
+function loadPage(bookingData, roomData) {
    apiCalls.retrieveData()
     .then((promise) => {
       customerData = promise[0];
@@ -73,12 +69,14 @@ function loadPage(bookingData, roomData, customer) {
       bookingData = promise[2];
       hotel = new Hotel(roomData, bookingData, customerData)
       customer = new Customer(customerData.customers[0])
+      console.log('the customer needed:', customer)
       retrieveDate();
       retrieveCustomerData(bookingData, roomData, customer);
       domUpdates.displayHeaderInfo(customer, todaysDate)
       domUpdates.displayCustomerInfo(customer.roomHistory);
       domUpdates.displayAvailableRooms(hotel, todaysDate)
     })
+
 
 }
 
@@ -108,14 +106,17 @@ function selectRoom(event, hotel, todaysDate) {
   console.log("hotel selected", hotel.requestedRoom)
 }
 
-function bookRoom(customer, hotel) {
-  console.log('le customer', customer)
+const bookRoom = (customer, hotel) => {
+  console.log('le customer', customer.id)
   console.log('le hotel', hotel)
   console.log("hotel selected in bookRoom", hotel.requestedRoom)
   // customer.reserveRoom(hotel.requestedRoom, bookingData, roomData)
-  let customerID = customer.id
   let date = bookDate.value.split("-").join('/');
-  let roomNumber = hotel.requestedRoomed[1].number;
+  console.log('requested date', date)
+  let roomNumber = hotel.requestedRoom[1].number;
+  console.log('roomNumber', roomNumber)
+  let customerID = customer.id
+  // let bookData = {customerID, date, roomNumber}
 
   apiCalls.addNewBooking(customerID, date, roomNumber)
 }

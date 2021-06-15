@@ -66,6 +66,7 @@ const domUpdates = {
     hotel.filterSearchResults(searchData);
     availableRoomsBackground.innerHTML = ' ';
     hotel.roomSearchResults.forEach(currentRoom => {
+      console.log('currentRoom', currentRoom[0])
       availableRoomsBackground.innerHTML += `
       <article class="card" id="${currentRoom[1].number}" dataset-id="${currentRoom[1].number}">
         <section class="card-header" id="${currentRoom[1].number}card-header">

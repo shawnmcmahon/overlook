@@ -29,12 +29,13 @@ function addNewBooking(customerID, date, roomNumber) {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        id: customerID,
+        userID: customerID,
         date: date,
         roomNumber: roomNumber
       })
     })
     .then(response => checkForError(response))
+    .then(response => console.log(response))
     .catch(error => console.error(`POST Request Error: ${error.message}`))
 
 }
