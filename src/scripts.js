@@ -29,7 +29,7 @@ let noBidet = document.getElementById('bookNoBidet');
 let doesntMatterBidet = document.getElementById('bookNPBidet');
 let searchButton = document.getElementById('searchRooms');
 let bookButton = document.getElementById('bookRoom');
-
+let noAvailableRoomError = document.getElementById('noAvailableRoomError')
 //Card selectors
 let roomNumber = document.getElementById('roomNumber');
 let roomReservationDate = document.getElementById('roomReservationDate');
@@ -116,25 +116,41 @@ function searchRooms() {
     'date': bookDate.value.split('-').join('/'),
     'roomType': bookRoomType.value
   }
-  console.log('seachData:', searchData)
+  console.log('seachData:', searchData);
   domUpdates.displaySearchResults(hotel, searchData);
 }
 
 function selectRoom(event, hotel, todaysDate) {
-  const integerId = parseInt(event.target.closest('article').id)
-  hotel.requestRoom(integerId)
+  const integerId = parseInt(event.target.closest('article').id);
+  hotel.requestRoom(integerId);
 }
 
 const bookRoom = (customer, hotel) => {
   let date = bookDate.value.split("-").join('/');
   let roomNumber = hotel.requestedRoom[1].number;
+  console.log('room number wanted:', roomNumber);
   let customerID = customer.id;
 
-  apiCalls.addNewBooking(customerID, date, roomNumber)
-  domUpdates.displayAvailableRooms(hotel, todaysDate)
-  customer.findBookingHistory(bookingData);
-  customer.bookingHistory.sort().reverse()
-  domUpdates.displayCustomerInfo(customer.roomHistory);
+  apiCalls.addNewBooking(customerID, date, roomNumber);
+  hotel.bookings.bookings.push({
+    userID: customerID,
+    date: date,
+    roomNumber: roomNumber
+  });
+  customer.bookingsHistory.push({
+    userID: customerID,
+    date: date,
+    roomNumber: roomNumber
+  });
+  // apiCalls.retrieveBookings()
+
+    // hotel.bookings = apiCalls.fetchBookingData()
+    // console.log('hotels.bookings:', hotel.bookings)
+    hotel.findAvailableRooms(date);
+    customer.findBookingHistory(bookingData);
+    customer.bookingHistory.sort().reverse();
+    domUpdates.displayAvailableRooms(hotel, date);
+    domUpdates.displayCustomerInfo(customer.roomHistory);
 
 }
 
