@@ -8,20 +8,15 @@ class Hotel {
     this.roomSearchResults = [];
     this.roomSearchResultsByDateRequested = [];
     this.requestedRoom = [];
-    console.log('this.bookings:', this.bookings.bookings.length)
     // this.formattedDate = formatDate(this.searchDate)
 
   }
 
-  //Is this returning the rooms it should be?
   findAvailableRooms(date) {
     this.searchDate = date;
-    // console.log('date:', date)
 
     const takenRooms = this.bookings.bookings.filter(currentBooking => currentBooking.date === date)
-    // console.log('takenRooms:', takenRooms)
     const takenRoomNumbers = takenRooms.map(currentRoom => currentRoom.roomNumber);
-    // console.log('takenRoomNumbers:', takenRoomNumbers)
     let foundRooms = this.rooms.rooms.reduce((availableRooms, room) => {
       if (!takenRoomNumbers.includes(room.number)) {
         availableRooms.push([date, room])
@@ -29,9 +24,7 @@ class Hotel {
       return availableRooms
     }, [])
     this.availableRooms = foundRooms;
-    console.log('this.bookings:', this.bookings.bookings.length)
 
-    // console.log('this.availablerooms:', this.availableRooms)
     return this.availableRooms;
 
   }
@@ -51,7 +44,7 @@ class Hotel {
     this.requestedRoom = this.availableRooms.find(currentRoom => {
       return currentRoom[1].number === roomNumber
     });
-
+    console.log('room requested for booking', this.requestedRoom)
     return this.requestedRoom;
   }
 

@@ -81,13 +81,11 @@ function loadLoginPage() {
 function loadPage(bookingData, roomData, userID) {
    apiCalls.retrieveData()
     .then((promise) => {
-      console.log("userID in promise", customerID)
       customerData = promise[0];
       roomData = promise[1];
       bookingData = promise[2];
       hotel = new Hotel(roomData, bookingData, customerData)
       customer = new Customer(customerData.customers[customerID - 1])
-      console.log('customer right after is is made:', customer)
       // formatDate(todaysDate);
       retrieveCustomerData(bookingData, roomData, customer);
       domUpdates.displayHeaderInfo(customer, todaysDate)
@@ -100,7 +98,6 @@ function loadPage(bookingData, roomData, userID) {
 }
 
 function retrieveCustomerData(bookingData, roomData, customer) {
-  console.log('current customer:', customer)
   customer.findBookingHistory(bookingData);
   customer.findRoomHistoryWithDate(bookingData, roomData)
   customer.findExpenseTotal(bookingData, roomData);
@@ -116,7 +113,6 @@ function searchRooms() {
     'date': bookDate.value.split('-').join('/'),
     'roomType': bookRoomType.value
   }
-  console.log('seachData:', searchData);
   domUpdates.displaySearchResults(hotel, searchData);
 }
 
@@ -166,9 +162,7 @@ function logIn(hotel) {
   } else {
     domUpdates.displayLogInError()
   }
-  console.log('userID in logIN function', userID)
   customerID = userID;
-  console.log('customerID in logIN function', customerID)
 
 
 
