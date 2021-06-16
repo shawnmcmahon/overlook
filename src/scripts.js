@@ -88,7 +88,7 @@ function loadPage(bookingData, roomData, userID) {
       hotel = new Hotel(roomData, bookingData, customerData)
       customer = new Customer(customerData.customers[customerID - 1])
       console.log('customer right after is is made:', customer)
-      retrieveDate();
+      // formatDate(todaysDate);
       retrieveCustomerData(bookingData, roomData, customer);
       domUpdates.displayHeaderInfo(customer, todaysDate)
       domUpdates.displayCustomerInfo(customer.roomHistory);
@@ -106,16 +106,17 @@ function retrieveCustomerData(bookingData, roomData, customer) {
   customer.findExpenseTotal(bookingData, roomData);
 }
 
-function retrieveDate() {
-  bookDate.min = todaysDate;
-  bookDate.value = todaysDate.split('/').join('-');
-}
+// function formatDate(date) {
+//   bookDate.min = date;
+//   bookDate.value = date.split('/').join('-');
+// }
 
 function searchRooms() {
   let searchData = {
-    'date': bookDate.value,
+    'date': bookDate.value.split('-').join('/'),
     'roomType': bookRoomType.value
   }
+  console.log('seachData:', searchData)
   domUpdates.displaySearchResults(hotel, searchData);
 }
 

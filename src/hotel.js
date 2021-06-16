@@ -8,16 +8,20 @@ class Hotel {
     this.roomSearchResults = [];
     this.roomSearchResultsByDateRequested = [];
     this.requestedRoom = [];
+    // this.formattedDate = formatDate(this.searchDate)
 
   }
 
   //Is this returning the rooms it should be?
   findAvailableRooms(date) {
     this.searchDate = date;
-    const availableRooms = this.bookings.bookings.filter(currentBooking => currentBooking.date === date)
-    const roomNumbers = availableRooms.map(currentRoom => currentRoom.roomNumber);
+    console.log('date:', date)
+
+    const takenRooms = this.bookings.bookings.filter(currentBooking => currentBooking.date === date)
+    console.log('takenRooms:', takenRooms)
+    const takenRoomNumbers = takenRooms.map(currentRoom => currentRoom.roomNumber);
     let foundRooms = this.rooms.rooms.reduce((availableRooms, room) => {
-      if (!roomNumbers.includes(room.number) && !availableRooms.includes(room)) {
+      if (!takenRoomNumbers.includes(room.number)) {
         availableRooms.push([date, room])
       }
       return availableRooms
