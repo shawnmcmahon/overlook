@@ -44,4 +44,9 @@ const retrieveData = () => {
   return Promise.all([fetchCustomerData(), fetchRoomData(), fetchBookingData()])
 }
 
-export default {fetchCustomerData, fetchRoomData, fetchBookingData, retrieveData, addNewBooking}
+const retrieveBookings = () => {
+  console.log(Promise.all([fetchBookingData()]))
+  return Promise.all([fetchBookingData()])
+}
+
+export default {fetchCustomerData, fetchRoomData, fetchBookingData, retrieveData, addNewBooking, retrieveBookings}

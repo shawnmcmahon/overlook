@@ -1,0 +1,11 @@
+$text-color: black;
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center() {
+  align-items: center;
+  justify-content: center;
+}

@@ -1,8 +1,9 @@
-import './css/base.scss';
-// import './css/_desktop.scss'
-// import './css/_mobile.scss'
-// import './css/_normalize.scss'
-// import './css/_tablet.scss'
+// import './css/base.scss'
+import './css/_normalize.scss'
+import './css/_variables.scss'
+import './css/_desktop.scss'
+import './css/_tablet.scss'
+import './css/_mobile.scss'
 
 import Customer from './customer';
 import Hotel from './hotel';
@@ -28,7 +29,7 @@ let noBidet = document.getElementById('bookNoBidet');
 let doesntMatterBidet = document.getElementById('bookNPBidet');
 let searchButton = document.getElementById('searchRooms');
 let bookButton = document.getElementById('bookRoom');
-
+let noAvailableRoomError = document.getElementById('noAvailableRoomError')
 //Card selectors
 let roomNumber = document.getElementById('roomNumber');
 let roomReservationDate = document.getElementById('roomReservationDate');
@@ -48,7 +49,7 @@ let password = document.getElementById('password')
 let bookingData, roomData, customerData, customer, hotel, userID;
 let todaysDate ='2020/06/19';
 let populatedCards;
-var customerID;
+let customerID;
 
 
 // Event Listeners
@@ -80,14 +81,12 @@ function loadLoginPage() {
 function loadPage(bookingData, roomData, userID) {
    apiCalls.retrieveData()
     .then((promise) => {
-      console.log("userID in promise", customerID)
       customerData = promise[0];
       roomData = promise[1];
       bookingData = promise[2];
       hotel = new Hotel(roomData, bookingData, customerData)
       customer = new Customer(customerData.customers[customerID - 1])
-      console.log('customer right after is is made:', customer)
-      retrieveDate();
+      // formatDate(todaysDate);
       retrieveCustomerData(bookingData, roomData, customer);
       domUpdates.displayHeaderInfo(customer, todaysDate)
       domUpdates.displayCustomerInfo(customer.roomHistory);
@@ -99,45 +98,60 @@ function loadPage(bookingData, roomData, userID) {
 }
 
 function retrieveCustomerData(bookingData, roomData, customer) {
-  console.log('current customer:', customer)
   customer.findBookingHistory(bookingData);
   customer.findRoomHistoryWithDate(bookingData, roomData)
   customer.findExpenseTotal(bookingData, roomData);
 }
 
-function retrieveDate() {
-  bookDate.min = todaysDate;
-  bookDate.value = todaysDate.split('/').join('-');
-}
+// function formatDate(date) {
+//   bookDate.min = date;
+//   bookDate.value = date.split('/').join('-');
+// }
 
 function searchRooms() {
   let searchData = {
-    'date': bookDate.value,
+    'date': bookDate.value.split('-').join('/'),
     'roomType': bookRoomType.value
   }
   domUpdates.displaySearchResults(hotel, searchData);
 }
 
 function selectRoom(event, hotel, todaysDate) {
-  const integerId = parseInt(event.target.closest('article').id)
-  hotel.requestRoom(integerId)
+  const integerId = parseInt(event.target.closest('article').id);
+  hotel.requestRoom(integerId);
 }
 
 const bookRoom = (customer, hotel) => {
   let date = bookDate.value.split("-").join('/');
   let roomNumber = hotel.requestedRoom[1].number;
+  console.log('room number wanted:', roomNumber);
   let customerID = customer.id;
 
-  apiCalls.addNewBooking(customerID, date, roomNumber)
-  domUpdates.displayAvailableRooms(hotel, todaysDate)
-  customer.findBookingHistory(bookingData);
-  customer.bookingHistory.sort().reverse()
-  domUpdates.displayCustomerInfo(customer.roomHistory);
+  apiCalls.addNewBooking(customerID, date, roomNumber);
+  hotel.bookings.bookings.push({
+    userID: customerID,
+    date: date,
+    roomNumber: roomNumber
+  });
+  customer.bookingsHistory.push({
+    userID: customerID,
+    date: date,
+    roomNumber: roomNumber
+  });
+  // apiCalls.retrieveBookings()
+
+    // hotel.bookings = apiCalls.fetchBookingData()
+    // console.log('hotels.bookings:', hotel.bookings)
+    hotel.findAvailableRooms(date);
+    customer.findBookingHistory(bookingData);
+    customer.bookingHistory.sort().reverse();
+    domUpdates.displayAvailableRooms(hotel, date);
+    domUpdates.displayCustomerInfo(customer.roomHistory);
 
 }
 
 function logIn(hotel) {
-  // event.preventDefault();
+  event.preventDefault();
   const userID = parseInt(username.value.split('r').pop());
   const foundCustomer = hotel.customers.customers.find(currentCustomer => {
     return currentCustomer.id === userID
@@ -148,9 +162,7 @@ function logIn(hotel) {
   } else {
     domUpdates.displayLogInError()
   }
-  console.log('userID in logIN function', userID)
   customerID = userID;
-  console.log('customerID in logIN function', customerID)
 
 
 
