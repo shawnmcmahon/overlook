@@ -1,0 +1,213 @@
+@import 'variables';
+html,
+body
+main {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  // font-family: 'Dela Gothic One', cursive;
+  font-family: 'Lato', sans-serif;
+  overflow: scroll;
+  width: 100%;
+}
+
+article {
+  @include flex-column();
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+header {
+  align-self: center;
+  align-items: center;
+  background-color: #DD6B6B;
+  border: none;
+  display: flex;
+  height: 175px;
+  margin-right: 10px;
+  outline: none;
+  width: 100%;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  height: 175px;
+  justify-content: center;
+  width: 100%;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+  // @include flex-column();
+
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+  // @include flex-column();
+
+}
+
+section {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  outline: none;
+}
+
+.room-search-form {
+  align-items: center;
+  align-self: center;
+  background-color: gray;
+  display: flex;
+  height: 200px;
+  width: 100%;
+}
+
+
+.medium-text {
+  color: black;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.reservation-label {
+  color: black;
+  font-size: 10px;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+
+.detail-label {
+  color: black;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+}
+
+
+.detail-value {
+  color: black;
+  font-size: 16px;
+  margin-top: 0px;
+  padding-left: 10px;
+}
+
+.room-label,
+.room-value {
+  align-self: flex-end;
+  color: black;
+  flex-direction: column;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+
+.room-value {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+.reservation-background {
+  align-items: flex-start;
+  background-color: white;
+  color: grey;
+  flex-wrap: wrap;
+  height: 400px;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.card {
+  align-self: center;
+  background-color: #F2F2F3;
+  color: grey;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px gray);
+  margin: 5px;
+  width: 250px;
+}
+
+.card:hover {
+  align-self: center;
+  background-color: #F2F2F3;
+  color: grey;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px gray);
+  margin: 5px;
+  opacity: 0.4;
+  width: 250px;
+}
+
+.card-header {
+  align-self: flex-start;
+  border-color: red;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 250px;
+  filter: brightness(70%);
+}
+
+.cost-label {
+  align-self: center;
+  background-color: white;
+  color: grey;
+  font-size: 12px;
+  height: 40px;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 225px;
+}
+
+.label-container {
+  height: 75px;
+  width: auto;
+
+}
+
+.reservation-history-label {
+  color: black;
+  flex-direction: column;
+  font-size: 36px;
+  padding-top: 20px;
+}
+
+
+.cost-value {
+  color: black;
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+.arrow {
+  height: 25px;
+  margin: 0px;
+  width: 25px;
+}
+
+.hidden {
+  display: none!important;
+}
+
+.display-error {
+  color: red;
+}

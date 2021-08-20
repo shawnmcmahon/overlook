@@ -1,16 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- <link rel='stylesheet' href='./src/css/base.scss'> -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webpack Starter Kit</title>
 </head>
 <body>
-  <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-  
-  <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+  <body>
+    <main>
+      <section class="" id="loginForm">
+        <form class="login-form">
+          <h1 class="reservation-history-label">OVERLOOK HOTEL</button>
+            <label for="username">Username</label>
+            <input text="text" placeholder="Username here" name='username' id="username" required />
+            <label for="password">Password</label>
+            <input text="text" placeholder="********" name='password' id="password" required />
+            <button type="button" class="" id="loginButton">Login</button>
+            <p class="display-error hidden" id="displayError">Username and/or Password are incorrect</p>
+        </form>
+      </section>
+      <section class="dashboard hidden" id="dashboard">
+        <header>
+          <nav>
+            <h1 class="reservation-history-label">OVERLOOK HOTEL</button>
+            <p class="medium-text" id="welcome">Hello</p>
+            <p class="medium-text" id="expenseHistory">Total Spent:</p>
+            <p class="medium-text" id="date">06/12/2020</p>
+          </nav>
+        </header>
+        <section class="room-search-form" id="roomSearchForm">
+          <!-- <form id="bookDate" name="bookDate"> -->
+          <div class="input date">
+           <label for="bookDate">Date: </label>
+           <input type="date" class="bookDate" id="bookDate" name="bookDate" value="2020-06-19" min="2020-06-19" max="2022-06-19" tab-index="0">
+          </div>
+          <!-- </form> -->
+         <div class="room-features">
+            <div class="input room-type">
+              <label for="roomType">Room Type: </label>
+              <select id="bookRoomType" name="roomType">
+                <option value="single room">Single Room</option>
+                <option value="junior suite">Junior Suite</option>
+                <option value="suite">Suite</option>
+                <option value="residential suite">Residential Suite</option>
+              </select>
+            </div>
+                <button type="button" class="" id="searchRooms">Search</button>
+                <button type="button" class="" id="bookRoom">Book</button>
+          </div>
+          <!-- <div class="label-container" id="availableRoomsLabelContainer"> -->
+        </section>
+          <p class="reservation-history-label">Available Rooms</p>
+        </div>
+        <section class="reservation-background" id="availableRoomsBackground" tab-index="1">
+          <p class="display-error hidden" id="noAvailableRoomError">We are SO SORRY!!! There are no available rooms for this day.</p>
+          <article class="card" id="card" tabindex="0">
+            <section class="card-header">
+                <p class="room-label">Room Number</p>
+                <p class="room-value" id="roomNumber">01</p>
+            </section>
+              <p class="medium-text" id="roomReservationDate" aria-label="Reservation Date">04/21/2020</p>
+              <p class="reservation-label">Reservation Date</p>
+            <section class="cost-label">
+              <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$365 Per Night</p>
+            </section>
+              <p class="detail-label">Room Type</p>
+              <p class="detail-value" id="roomType">King</p>
+              <p class="detail-label">Number of Beds</p>
+              <p class="detail-value" id="roomNumberOfBeds">2</p>
+              <p class="detail-label">Bidet</p>
+              <p class="detail-value" id="roomBidet">Yes</p>
+          </article>
+          <article class="card" id="card">
+            <section class="card-header">
+                <p class="room-label">Room Number</p>
+                <p class="room-value" id="roomNumber">01</p>
+            </section>
+              <p class="medium-text" id="roomReservationDate" aria-label="Reservation Date">04/21/2020</p>
+              <p class="reservation-label">Reservation Date</p>
+            <section class="cost-label">
+              <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$365 Per Night</p>
+            </section>
+              <p class="detail-label">Room Type</p>
+              <p class="detail-value" id="roomType">King</p>
+              <p class="detail-label">Number of Beds</p>
+              <p class="detail-value" id="roomNumberOfBeds">2</p>
+              <p class="detail-label">Bidet</p>
+              <p class="detail-value" id="roomBidet">Yes</p>
+          </article>
+        </section>
+        <div class="label-container" id="reservationHistoryLabelContainer">
+          <p class="reservation-history-label">Your Reservation History</p>
+        </div>
+        <section class="reservation-background" id="reservationHistoryBackground" tab-index="2">
+          <article class="card" id="card">
+            <section class="card-header">
+                <p class="room-label">Room Number</p>
+                <p class="room-value" id="roomNumber">01</p>
+            </section>
+              <p class="medium-text" id="roomReservationDate" aria-label="Reservation Date">04/21/2020</p>
+              <p class="reservation-label">Reservation Date</p>
+            <section class="cost-label">
+              <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$365 Per Night</p>
+            </section>
+              <p class="detail-label">Room Type</p>
+              <p class="detail-value" id="roomType">King</p>
+              <p class="detail-label">Number of Beds</p>
+              <p class="detail-value" id="roomNumberOfBeds">2</p>
+              <p class="detail-label">Bidet</p>
+              <p class="detail-value" id="roomBidet">Yes</p>
+          </article>
+          <article class="card" id="card">
+            <section class="card-header">
+                <p class="room-label">Room Number</p>
+                <p class="room-value" id="roomNumber">01</p>
+            </section>
+              <p class="medium-text" id="roomReservationDate" aria-label="Reservation Date">04/21/2020</p>
+              <p class="reservation-label">Reservation Date</p>
+            <section class="cost-label">
+              <p class="cost-value" id="roomCost" aria-label="Cost Per Night">$365 Per Night</p>
+            </section>
+              <p class="detail-label">Room Type</p>
+              <p class="detail-value" id="roomType">King</p>
+              <p class="detail-label">Number of Beds</p>
+              <p class="detail-value" id="roomNumberOfBeds">2</p>
+              <p class="detail-label">Bidet</p>
+              <p class="detail-value" id="roomBidet">Yes</p>
+          </article>
+      </section>
+  </main>
   <script src="bundle.js"></script>
-
 </body>
 </html>
